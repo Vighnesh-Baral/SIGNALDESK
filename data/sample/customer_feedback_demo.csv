@@ -1,0 +1,207 @@
+﻿Customer_ID,Created_At,Product_Area,Feedback,Source,Synthetic_Label
+CUS-0001,2026-08-04,Application,The application crashes when I export a report. We noticed it while working remotely while using a remote session.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0002,2026-08-07,Application,The mobile app freezes after I open the dashboard. We noticed it during a morning session while using a laptop.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0003,2026-08-10,Application,The app closes unexpectedly when I save my work. We noticed it near the end of the workday while using a browser window.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0004,2026-08-13,Application,I get kicked out of the application while editing a project. We noticed it while preparing a client deliverable while using a desktop computer.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0005,2026-08-16,Application,The application becomes unresponsive when I upload a large file. We noticed it during a scheduled work session while using a standard work session.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0006,2026-08-19,Application,The desktop app crashes when I switch workspaces. We noticed it during an afternoon session while using a tablet.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0007,2026-08-22,Application,The app freezes after I attach a document. We noticed it during a weekday session while using a new device.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0008,2026-08-25,Application,My session closes unexpectedly during an edit. We noticed it during a team review while using a phone.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0009,2026-08-28,Application,The application stops responding when I open a large customer list. We noticed it at the start of the workday while using a wired office network.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0010,2026-08-31,Application,The mobile client keeps freezing after sign in. We noticed it after lunch while using a shared workstation.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0011,2026-09-03,Application,The application crashes when I export a report. We noticed it during a weekend session while using a wireless office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0012,2026-09-06,Application,The mobile app freezes after I open the dashboard. We noticed it while working remotely while using a home office setup.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0013,2026-09-09,Application,The app closes unexpectedly when I save my work. We noticed it during a morning session while using a personal device.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0014,2026-09-12,Application,I get kicked out of the application while editing a project. We noticed it near the end of the workday while using a remote session.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0015,2026-09-15,Application,The application becomes unresponsive when I upload a large file. We noticed it while preparing a client deliverable while using a laptop.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0016,2026-09-18,Application,The desktop app crashes when I switch workspaces. We noticed it during a scheduled work session while using a browser window.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0017,2026-09-21,Application,The app freezes after I attach a document. We noticed it during an afternoon session while using a desktop computer.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0018,2026-09-24,Application,My session closes unexpectedly during an edit. We noticed it during a weekday session while using a standard work session.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0019,2026-09-27,Application,The application stops responding when I open a large customer list. We noticed it during a team review while using a tablet.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0020,2026-09-30,Application,The mobile client keeps freezing after sign in. We noticed it at the start of the workday while using a new device.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0021,2026-10-03,Application,The application crashes when I export a report. We noticed it after lunch while using a phone.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0022,2026-10-06,Application,The mobile app freezes after I open the dashboard. We noticed it during a weekend session while using a wired office network.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0023,2026-10-09,Application,The app closes unexpectedly when I save my work. We noticed it while working remotely while using a shared workstation.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0024,2026-10-12,Application,I get kicked out of the application while editing a project. We noticed it during a morning session while using a wireless office network.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0025,2026-10-15,Application,The application becomes unresponsive when I upload a large file. We noticed it near the end of the workday while using a home office setup.,Support ticket,SYNTHETIC_DEMO_DATA
+EMPTY-1,2026-10-01,Unknown,,Synthetic quality test,SYNTHETIC_DEMO_DATA
+CUS-0026,2026-10-18,Application,The desktop app crashes when I switch workspaces. We noticed it while preparing a client deliverable while using a personal device.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0027,2026-10-21,Application,The app freezes after I attach a document. We noticed it during a scheduled work session while using a remote session.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0028,2026-10-24,Application,My session closes unexpectedly during an edit. We noticed it during an afternoon session while using a laptop.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0029,2026-10-27,Application,The application stops responding when I open a large customer list. We noticed it during a weekday session while using a browser window.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0030,2026-08-01,Application,The mobile client keeps freezing after sign in. We noticed it during a team review while using a desktop computer.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0031,2026-08-04,Application,The application crashes when I export a report. We noticed it at the start of the workday while using a standard work session.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0032,2026-08-07,Application,The mobile app freezes after I open the dashboard. We noticed it after lunch while using a tablet.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0033,2026-08-10,Application,The app closes unexpectedly when I save my work. We noticed it during a weekend session while using a new device.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0034,2026-08-13,Application,I get kicked out of the application while editing a project. We noticed it while working remotely while using a phone.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0035,2026-08-16,Application,The application becomes unresponsive when I upload a large file. We noticed it during a morning session while using a wired office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0036,2026-08-19,Dashboard,The dashboard takes too long to load in the morning. We noticed it while working remotely while using a remote session.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0037,2026-08-22,Dashboard,Switching between pages is painfully slow. We noticed it during a morning session while using a laptop.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0038,2026-08-25,Dashboard,Search results take several seconds to appear. We noticed it near the end of the workday while using a browser window.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0039,2026-08-28,Dashboard,The application feels sluggish when many records are open. We noticed it while preparing a client deliverable while using a desktop computer.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0040,2026-08-31,Dashboard,Loading the analytics screen is much slower than before. We noticed it during a scheduled work session while using a standard work session.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0041,2026-09-03,Dashboard,The analytics summary screen takes a long time to open. We noticed it during an afternoon session while using a tablet.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0042,2026-09-06,Dashboard,Filtering a large list makes the page lag. We noticed it during a weekday session while using a new device.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0043,2026-09-09,Dashboard,The app is slow when I search across projects. We noticed it during a team review while using a phone.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0044,2026-09-12,Dashboard,The dashboard spinner stays on screen for too long. We noticed it at the start of the workday while using a wired office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0045,2026-09-15,Dashboard,Pages respond slowly when several team members are online. We noticed it after lunch while using a shared workstation.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0046,2026-09-18,Dashboard,The dashboard takes too long to load in the morning. We noticed it during a weekend session while using a wireless office network.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0047,2026-09-21,Dashboard,Switching between pages is painfully slow. We noticed it while working remotely while using a home office setup.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0048,2026-09-24,Dashboard,Search results take several seconds to appear. We noticed it during a morning session while using a personal device.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0049,2026-09-27,Dashboard,The application feels sluggish when many records are open. We noticed it near the end of the workday while using a remote session.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0050,2026-09-30,Dashboard,Loading the analytics screen is much slower than before. We noticed it while preparing a client deliverable while using a laptop.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0051,2026-10-03,Dashboard,The analytics summary screen takes a long time to open. We noticed it during a scheduled work session while using a browser window.,In-app survey,SYNTHETIC_DEMO_DATA
+EMPTY-2,2026-10-01,Unknown,,Synthetic quality test,SYNTHETIC_DEMO_DATA
+CUS-0052,2026-10-06,Dashboard,Filtering a large list makes the page lag. We noticed it during an afternoon session while using a desktop computer.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0053,2026-10-09,Dashboard,The app is slow when I search across projects. We noticed it during a weekday session while using a standard work session.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0054,2026-10-12,Dashboard,The dashboard spinner stays on screen for too long. We noticed it during a team review while using a tablet.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0055,2026-10-15,Dashboard,Pages respond slowly when several team members are online. We noticed it at the start of the workday while using a new device.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0056,2026-10-18,Dashboard,The dashboard takes too long to load in the morning. We noticed it after lunch while using a phone.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0057,2026-10-21,Dashboard,Switching between pages is painfully slow. We noticed it during a weekend session while using a wired office network.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0058,2026-10-24,Dashboard,Search results take several seconds to appear. We noticed it while working remotely while using a shared workstation.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0059,2026-10-27,Dashboard,The application feels sluggish when many records are open. We noticed it during a morning session while using a wireless office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0060,2026-08-01,Dashboard,Loading the analytics screen is much slower than before. We noticed it near the end of the workday while using a home office setup.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0061,2026-08-04,Dashboard,The analytics summary screen takes a long time to open. We noticed it while preparing a client deliverable while using a personal device.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0062,2026-08-07,Dashboard,Filtering a large list makes the page lag. We noticed it during a scheduled work session while using a remote session.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0063,2026-08-10,Dashboard,The app is slow when I search across projects. We noticed it during an afternoon session while using a laptop.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0064,2026-08-13,Dashboard,The dashboard spinner stays on screen for too long. We noticed it during a weekday session while using a browser window.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0065,2026-08-16,Dashboard,Pages respond slowly when several team members are online. We noticed it during a team review while using a desktop computer.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0066,2026-08-19,Reporting,The exported spreadsheet is missing several columns. We noticed it during a team review while using a home office setup.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0067,2026-08-22,Reporting,I cannot choose a date range before exporting a report. We noticed it at the start of the workday while using a personal device.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0068,2026-08-25,Reporting,The PDF report layout breaks across pages. We noticed it after lunch while using a remote session.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0069,2026-08-28,Reporting,Report exports fail when I select more than one team. We noticed it during a weekend session while using a laptop.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0070,2026-08-31,Reporting,I need a scheduled weekly report export. We noticed it while working remotely while using a browser window.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0071,2026-09-03,Reporting,The CSV download contains the wrong date format. We noticed it during a morning session while using a desktop computer.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0072,2026-09-06,Reporting,The export button does not include archived records. We noticed it near the end of the workday while using a standard work session.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0073,2026-09-09,Reporting,I cannot export the chart with its data table. We noticed it while preparing a client deliverable while using a tablet.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0074,2026-09-12,Reporting,The report downloads with blank rows at the bottom. We noticed it during a scheduled work session while using a new device.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0075,2026-09-15,Reporting,The monthly report is missing the summary section. We noticed it during an afternoon session while using a phone.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0076,2026-09-18,Reporting,The exported spreadsheet is missing several columns. We noticed it during a weekday session while using a wired office network.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0077,2026-09-21,Reporting,I cannot choose a date range before exporting a report. We noticed it during a team review while using a shared workstation.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+EMPTY-3,2026-10-01,Unknown,,Synthetic quality test,SYNTHETIC_DEMO_DATA
+CUS-0078,2026-09-24,Reporting,The PDF report layout breaks across pages. We noticed it at the start of the workday while using a wireless office network.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0079,2026-09-27,Reporting,Report exports fail when I select more than one team. We noticed it after lunch while using a home office setup.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0080,2026-09-30,Reporting,I need a scheduled weekly report export. We noticed it during a weekend session while using a personal device.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0081,2026-10-03,Reporting,The CSV download contains the wrong date format. We noticed it while working remotely while using a remote session.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0082,2026-10-06,Reporting,The export button does not include archived records. We noticed it during a morning session while using a laptop.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0083,2026-10-09,Reporting,I cannot export the chart with its data table. We noticed it near the end of the workday while using a browser window.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0084,2026-10-12,Reporting,The report downloads with blank rows at the bottom. We noticed it while preparing a client deliverable while using a desktop computer.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0085,2026-10-15,Reporting,The monthly report is missing the summary section. We noticed it during a scheduled work session while using a standard work session.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0086,2026-10-18,Reporting,The exported spreadsheet is missing several columns. We noticed it during an afternoon session while using a tablet.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0087,2026-10-21,Reporting,I cannot choose a date range before exporting a report. We noticed it during a weekday session while using a new device.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0088,2026-10-24,Reporting,The PDF report layout breaks across pages. We noticed it during a team review while using a phone.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0089,2026-10-27,Reporting,Report exports fail when I select more than one team. We noticed it at the start of the workday while using a wired office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0090,2026-08-01,Reporting,I need a scheduled weekly report export. We noticed it after lunch while using a shared workstation.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0091,2026-08-04,Reporting,The CSV download contains the wrong date format. We noticed it during a weekend session while using a wireless office network.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0092,2026-08-07,Reporting,The export button does not include archived records. We noticed it while working remotely while using a home office setup.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0093,2026-08-10,Reporting,I cannot export the chart with its data table. We noticed it during a morning session while using a personal device.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0094,2026-08-13,Interface,It is difficult to find the settings page. We noticed it during a morning session while using a new device.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0095,2026-08-16,Interface,The navigation labels are confusing for a new user. We noticed it near the end of the workday while using a phone.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0096,2026-08-19,Interface,There are too many clicks to reach saved views. We noticed it while preparing a client deliverable while using a wired office network.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0097,2026-08-22,Interface,The filter controls are hard to understand. We noticed it during a scheduled work session while using a shared workstation.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0098,2026-08-25,Interface,The layout on the main screen is cluttered. We noticed it during an afternoon session while using a wireless office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0099,2026-08-28,Interface,I cannot tell which menu contains team permissions. We noticed it during a weekday session while using a home office setup.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0100,2026-08-31,Interface,The page labels do not explain what each option does. We noticed it during a team review while using a personal device.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0101,2026-09-03,Application,The application crashes when I export a report. We noticed it while working remotely while using a remote session.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0102,2026-09-06,Interface,The settings menu is difficult to navigate. We noticed it after lunch while using a laptop.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0103,2026-09-09,Interface,The dashboard buttons are not clearly labelled. We noticed it during a weekend session while using a browser window.,Support ticket,SYNTHETIC_DEMO_DATA
+EMPTY-4,2026-10-01,Unknown,,Synthetic quality test,SYNTHETIC_DEMO_DATA
+CUS-0104,2026-09-12,Application,My session closes unexpectedly during an edit. We noticed it during a team review while using a phone.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0105,2026-09-15,Interface,The navigation labels are confusing for a new user. We noticed it during a morning session while using a standard work session.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0106,2026-09-18,Interface,There are too many clicks to reach saved views. We noticed it near the end of the workday while using a tablet.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0107,2026-09-21,Application,The application becomes unresponsive when I upload a large file. We noticed it while preparing a client deliverable while using a laptop.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0108,2026-09-24,Interface,The layout on the main screen is cluttered. We noticed it during a scheduled work session while using a phone.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0109,2026-09-27,Interface,I cannot tell which menu contains team permissions. We noticed it during an afternoon session while using a wired office network.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0110,2026-09-30,Application,The mobile app freezes after I open the dashboard. We noticed it during a weekend session while using a wired office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0111,2026-10-03,Interface,Finding the activity history takes several steps. We noticed it during a team review while using a wireless office network.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0112,2026-10-06,Interface,The settings menu is difficult to navigate. We noticed it at the start of the workday while using a home office setup.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0113,2026-10-09,Application,The application stops responding when I open a large customer list. We noticed it during a weekday session while using a browser window.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0114,2026-10-12,Interface,It is difficult to find the settings page. We noticed it during a weekend session while using a remote session.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0115,2026-10-15,Interface,The navigation labels are confusing for a new user. We noticed it while working remotely while using a laptop.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0116,2026-10-18,Dashboard,The dashboard takes too long to load in the morning. We noticed it while working remotely while using a remote session.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0117,2026-10-21,Interface,The filter controls are hard to understand. We noticed it near the end of the workday while using a desktop computer.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0118,2026-10-24,Interface,The layout on the main screen is cluttered. We noticed it while preparing a client deliverable while using a standard work session.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0119,2026-10-27,Dashboard,The app is slow when I search across projects. We noticed it during a team review while using a phone.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0120,2026-08-01,Accounts,I cannot sign in even though my password is correct. We noticed it during an afternoon session while using a personal device.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0121,2026-08-04,Accounts,The two factor authentication code is not accepted. We noticed it during a weekday session while using a remote session.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0122,2026-08-07,Dashboard,Loading the analytics screen is much slower than before. We noticed it while preparing a client deliverable while using a laptop.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0123,2026-08-10,Accounts,I need a way to change the account email address. We noticed it at the start of the workday while using a browser window.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0124,2026-08-13,Accounts,The login page rejects my valid credentials. We noticed it after lunch while using a desktop computer.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0125,2026-08-16,Dashboard,Switching between pages is painfully slow. We noticed it during a weekend session while using a wired office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0126,2026-08-19,Accounts,I am locked out after resetting my password. We noticed it while working remotely while using a tablet.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0127,2026-08-22,Accounts,The sign in code arrives after it has expired. We noticed it during a morning session while using a new device.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0128,2026-08-25,Dashboard,The dashboard spinner stays on screen for too long. We noticed it during a weekday session while using a browser window.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0129,2026-08-28,Accounts,The password reset link expires before I can use it. We noticed it while preparing a client deliverable while using a wired office network.,In-app survey,SYNTHETIC_DEMO_DATA
+EMPTY-5,2026-10-01,Unknown,,Synthetic quality test,SYNTHETIC_DEMO_DATA
+CUS-0130,2026-08-31,Accounts,I cannot sign in even though my password is correct. We noticed it during a scheduled work session while using a shared workstation.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0131,2026-09-03,Reporting,The CSV download contains the wrong date format. We noticed it during a morning session while using a desktop computer.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0132,2026-09-06,Accounts,Invited team members cannot activate their accounts. We noticed it during a weekday session while using a home office setup.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0133,2026-09-09,Accounts,I need a way to change the account email address. We noticed it during a team review while using a personal device.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0134,2026-09-12,Reporting,The PDF report layout breaks across pages. We noticed it at the start of the workday while using a wireless office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0135,2026-09-15,Accounts,The account activation email never arrives. We noticed it after lunch while using a laptop.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0136,2026-09-18,Accounts,I am locked out after resetting my password. We noticed it during a weekend session while using a browser window.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0137,2026-09-21,Data,Changes made on my laptop do not appear on the web app. We noticed it during an afternoon session while using a wired office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0138,2026-09-24,Data,Some records disappear after the page refreshes. We noticed it during a weekday session while using a shared workstation.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0139,2026-09-27,Data,The latest uploaded data is not syncing to the dashboard. We noticed it during a team review while using a wireless office network.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0140,2026-09-30,Data,I see duplicate records after synchronisation. We noticed it at the start of the workday while using a home office setup.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0141,2026-10-03,Data,Edits are not saved reliably when the connection drops. We noticed it after lunch while using a personal device.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0142,2026-10-06,Data,The dashboard is showing yesterday's data. We noticed it during a weekend session while using a remote session.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0143,2026-10-09,Data,Updates from the mobile app are missing on desktop. We noticed it while working remotely while using a laptop.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0144,2026-10-12,Data,Some customer records disappear after saving. We noticed it during a morning session while using a browser window.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0145,2026-10-15,Data,The background sync stops before all rows are uploaded. We noticed it near the end of the workday while using a desktop computer.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0146,2026-10-18,Data,My latest changes are not saved after reconnecting. We noticed it while preparing a client deliverable while using a standard work session.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0147,2026-10-21,Data,Changes made on my laptop do not appear on the web app. We noticed it during a scheduled work session while using a tablet.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0148,2026-10-24,Data,Some records disappear after the page refreshes. We noticed it during an afternoon session while using a new device.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0149,2026-10-27,Data,The latest uploaded data is not syncing to the dashboard. We noticed it during a weekday session while using a phone.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0150,2026-08-01,Data,I see duplicate records after synchronisation. We noticed it during a team review while using a wired office network.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0151,2026-08-04,Data,Edits are not saved reliably when the connection drops. We noticed it at the start of the workday while using a shared workstation.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0152,2026-08-07,Data,The dashboard is showing yesterday's data. We noticed it after lunch while using a wireless office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0153,2026-08-10,Data,Updates from the mobile app are missing on desktop. We noticed it during a weekend session while using a home office setup.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0154,2026-08-13,Data,Some customer records disappear after saving. We noticed it while working remotely while using a personal device.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0155,2026-08-16,Integrations,The Slack integration disconnects every few days. We noticed it during an afternoon session while using a personal device.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+EMPTY-6,2026-10-01,Unknown,,Synthetic quality test,SYNTHETIC_DEMO_DATA
+CUS-0156,2026-08-19,Integrations,The API documentation does not explain pagination clearly. We noticed it during a weekday session while using a remote session.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0157,2026-08-22,Integrations,I cannot connect our CRM to the application. We noticed it during a team review while using a laptop.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0158,2026-08-25,Integrations,The calendar integration is not importing new events. We noticed it at the start of the workday while using a browser window.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0159,2026-08-28,Integrations,Please add an integration for our project management tool. We noticed it after lunch while using a desktop computer.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0160,2026-08-31,Integrations,The CRM connector fails to authenticate. We noticed it during a weekend session while using a standard work session.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0161,2026-09-03,Integrations,Our calendar connection stopped updating appointments. We noticed it while working remotely while using a tablet.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0162,2026-09-06,Integrations,The API response is missing the owner field. We noticed it during a morning session while using a new device.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0163,2026-09-09,Integrations,I cannot link the application to our support platform. We noticed it near the end of the workday while using a phone.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0164,2026-09-12,Integrations,The Slack connection needs to be authorised again each week. We noticed it while preparing a client deliverable while using a wired office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0165,2026-09-15,Integrations,The Slack integration disconnects every few days. We noticed it during a scheduled work session while using a shared workstation.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0166,2026-09-18,Integrations,The API documentation does not explain pagination clearly. We noticed it during an afternoon session while using a wireless office network.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0167,2026-09-21,Integrations,I cannot connect our CRM to the application. We noticed it during a weekday session while using a home office setup.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0168,2026-09-24,Integrations,The calendar integration is not importing new events. We noticed it during a team review while using a personal device.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0169,2026-09-27,Billing,I was charged twice for this month's subscription. We noticed it during a morning session while using a new device.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0170,2026-09-30,Billing,The invoice does not show our company tax details. We noticed it near the end of the workday while using a phone.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0171,2026-10-03,Billing,I cannot find where to change the subscription plan. We noticed it while preparing a client deliverable while using a wired office network.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0172,2026-10-06,Billing,The payment failed but my card shows a pending charge. We noticed it during a scheduled work session while using a shared workstation.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0173,2026-10-09,Billing,Please explain how to cancel the subscription. We noticed it during an afternoon session while using a wireless office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0174,2026-10-12,Billing,Our invoice has the wrong billing address. We noticed it during a weekday session while using a home office setup.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0175,2026-10-15,Billing,The monthly plan price changed without an explanation. We noticed it during a team review while using a personal device.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0176,2026-10-18,Billing,I need a receipt for the last payment. We noticed it at the start of the workday while using a remote session.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0177,2026-10-21,Billing,The billing page still shows an unpaid invoice after payment. We noticed it after lunch while using a laptop.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0178,2026-10-24,Billing,Please clarify the renewal date for our annual plan. We noticed it during a weekend session while using a browser window.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0179,2026-10-27,Billing,I was charged twice for this month's subscription. We noticed it while working remotely while using a desktop computer.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0180,2026-08-01,Billing,The invoice does not show our company tax details. We noticed it during a morning session while using a standard work session.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0181,2026-08-04,Product,Please add keyboard shortcuts for common actions. We noticed it during a weekend session while using a phone.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0182,2026-08-07,Product,I would like to save custom dashboard views. We noticed it while working remotely while using a wired office network.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0183,2026-08-10,Product,It would help to have a dark mode option. We noticed it during a morning session while using a shared workstation.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0184,2026-08-13,Product,Please add bulk editing for customer records. We noticed it near the end of the workday while using a wireless office network.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0185,2026-08-16,Product,I wish there was an option to assign comments to teammates. We noticed it while preparing a client deliverable while using a home office setup.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0186,2026-08-19,Product,Could you add a calendar view for upcoming tasks. We noticed it during a scheduled work session while using a personal device.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0187,2026-08-22,Product,We need an option to export saved filters. We noticed it during an afternoon session while using a remote session.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0188,2026-08-25,Product,Please add custom fields to the customer profile. We noticed it during a weekday session while using a laptop.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0189,2026-08-28,Product,I would like to pin frequently used reports. We noticed it during a team review while using a browser window.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0190,2026-08-31,Product,It would help to schedule reminders from the task page. We noticed it at the start of the workday while using a desktop computer.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0191,2026-09-03,General,The new dashboard is easy to use and looks great. We noticed it while preparing a client deliverable while using a shared workstation.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0192,2026-09-06,General,Your support team was helpful and resolved my issue quickly. We noticed it during a scheduled work session while using a wireless office network.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0193,2026-09-09,General,The reporting workflow is much better after the latest update. We noticed it during an afternoon session while using a home office setup.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0194,2026-09-12,General,I love how quickly I can find customer information. We noticed it during a weekday session while using a personal device.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0195,2026-09-15,General,The application has made our weekly review much easier. We noticed it during a team review while using a remote session.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0196,2026-09-18,General,The new search feature works perfectly for our team. We noticed it at the start of the workday while using a laptop.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0197,2026-09-21,General,The onboarding guide was clear and helpful. We noticed it after lunch while using a browser window.,Customer interview follow-up,SYNTHETIC_DEMO_DATA
+CUS-0198,2026-09-24,General,The updated interface looks excellent. We noticed it during a weekend session while using a desktop computer.,In-app survey,SYNTHETIC_DEMO_DATA
+CUS-0199,2026-09-27,General,I appreciate how easy it is to organise projects. We noticed it while working remotely while using a standard work session.,Support ticket,SYNTHETIC_DEMO_DATA
+CUS-0200,2026-09-30,General,The recent improvements made the app much more useful. We noticed it during a morning session while using a tablet.,Customer interview follow-up,SYNTHETIC_DEMO_DATA

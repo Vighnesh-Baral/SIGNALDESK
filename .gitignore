@@ -1,0 +1,25 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Secrets
+.env
+.env.*.local
+
+# Runtime data and generated reports
+data/uploads/*
+data/processed/*
+outputs/*
+!data/uploads/.gitkeep
+!data/processed/.gitkeep
+!outputs/.gitkeep
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

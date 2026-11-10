@@ -1,0 +1,818 @@
+{
+  "description": "Synthetic-only QA labels. Never upload this file to SIGNALDESK during the demo.",
+  "expected_non_empty_records": 200,
+  "expected_theme_counts": {
+    "Crashes & Stability": 40,
+    "Performance & Speed": 35,
+    "Reporting & Export": 30,
+    "Navigation & Usability": 19,
+    "Authentication & Account Access": 12,
+    "Data Sync & Reliability": 18,
+    "Integrations": 14,
+    "Billing & Subscription": 12,
+    "Feature Requests": 10,
+    "Positive Feedback": 10
+  },
+  "records": {
+    "CUS-0001": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application crashes when I export a report. We noticed it while working remotely while using a remote session."
+    },
+    "CUS-0002": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The mobile app freezes after I open the dashboard. We noticed it during a morning session while using a laptop."
+    },
+    "CUS-0003": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The app closes unexpectedly when I save my work. We noticed it near the end of the workday while using a browser window."
+    },
+    "CUS-0004": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "I get kicked out of the application while editing a project. We noticed it while preparing a client deliverable while using a desktop computer."
+    },
+    "CUS-0005": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application becomes unresponsive when I upload a large file. We noticed it during a scheduled work session while using a standard work session."
+    },
+    "CUS-0006": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The desktop app crashes when I switch workspaces. We noticed it during an afternoon session while using a tablet."
+    },
+    "CUS-0007": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The app freezes after I attach a document. We noticed it during a weekday session while using a new device."
+    },
+    "CUS-0008": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "My session closes unexpectedly during an edit. We noticed it during a team review while using a phone."
+    },
+    "CUS-0009": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application stops responding when I open a large customer list. We noticed it at the start of the workday while using a wired office network."
+    },
+    "CUS-0010": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The mobile client keeps freezing after sign in. We noticed it after lunch while using a shared workstation."
+    },
+    "CUS-0011": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application crashes when I export a report. We noticed it during a weekend session while using a wireless office network."
+    },
+    "CUS-0012": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The mobile app freezes after I open the dashboard. We noticed it while working remotely while using a home office setup."
+    },
+    "CUS-0013": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The app closes unexpectedly when I save my work. We noticed it during a morning session while using a personal device."
+    },
+    "CUS-0014": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "I get kicked out of the application while editing a project. We noticed it near the end of the workday while using a remote session."
+    },
+    "CUS-0015": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application becomes unresponsive when I upload a large file. We noticed it while preparing a client deliverable while using a laptop."
+    },
+    "CUS-0016": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The desktop app crashes when I switch workspaces. We noticed it during a scheduled work session while using a browser window."
+    },
+    "CUS-0017": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The app freezes after I attach a document. We noticed it during an afternoon session while using a desktop computer."
+    },
+    "CUS-0018": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "My session closes unexpectedly during an edit. We noticed it during a weekday session while using a standard work session."
+    },
+    "CUS-0019": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application stops responding when I open a large customer list. We noticed it during a team review while using a tablet."
+    },
+    "CUS-0020": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The mobile client keeps freezing after sign in. We noticed it at the start of the workday while using a new device."
+    },
+    "CUS-0021": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application crashes when I export a report. We noticed it after lunch while using a phone."
+    },
+    "CUS-0022": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The mobile app freezes after I open the dashboard. We noticed it during a weekend session while using a wired office network."
+    },
+    "CUS-0023": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The app closes unexpectedly when I save my work. We noticed it while working remotely while using a shared workstation."
+    },
+    "CUS-0024": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "I get kicked out of the application while editing a project. We noticed it during a morning session while using a wireless office network."
+    },
+    "CUS-0025": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application becomes unresponsive when I upload a large file. We noticed it near the end of the workday while using a home office setup."
+    },
+    "CUS-0026": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The desktop app crashes when I switch workspaces. We noticed it while preparing a client deliverable while using a personal device."
+    },
+    "CUS-0027": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The app freezes after I attach a document. We noticed it during a scheduled work session while using a remote session."
+    },
+    "CUS-0028": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "My session closes unexpectedly during an edit. We noticed it during an afternoon session while using a laptop."
+    },
+    "CUS-0029": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application stops responding when I open a large customer list. We noticed it during a weekday session while using a browser window."
+    },
+    "CUS-0030": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The mobile client keeps freezing after sign in. We noticed it during a team review while using a desktop computer."
+    },
+    "CUS-0031": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application crashes when I export a report. We noticed it at the start of the workday while using a standard work session."
+    },
+    "CUS-0032": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The mobile app freezes after I open the dashboard. We noticed it after lunch while using a tablet."
+    },
+    "CUS-0033": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The app closes unexpectedly when I save my work. We noticed it during a weekend session while using a new device."
+    },
+    "CUS-0034": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "I get kicked out of the application while editing a project. We noticed it while working remotely while using a phone."
+    },
+    "CUS-0035": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application becomes unresponsive when I upload a large file. We noticed it during a morning session while using a wired office network."
+    },
+    "CUS-0036": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The dashboard takes too long to load in the morning. We noticed it while working remotely while using a remote session."
+    },
+    "CUS-0037": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Switching between pages is painfully slow. We noticed it during a morning session while using a laptop."
+    },
+    "CUS-0038": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Search results take several seconds to appear. We noticed it near the end of the workday while using a browser window."
+    },
+    "CUS-0039": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The application feels sluggish when many records are open. We noticed it while preparing a client deliverable while using a desktop computer."
+    },
+    "CUS-0040": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Loading the analytics screen is much slower than before. We noticed it during a scheduled work session while using a standard work session."
+    },
+    "CUS-0041": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The analytics summary screen takes a long time to open. We noticed it during an afternoon session while using a tablet."
+    },
+    "CUS-0042": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Filtering a large list makes the page lag. We noticed it during a weekday session while using a new device."
+    },
+    "CUS-0043": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The app is slow when I search across projects. We noticed it during a team review while using a phone."
+    },
+    "CUS-0044": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The dashboard spinner stays on screen for too long. We noticed it at the start of the workday while using a wired office network."
+    },
+    "CUS-0045": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Pages respond slowly when several team members are online. We noticed it after lunch while using a shared workstation."
+    },
+    "CUS-0046": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The dashboard takes too long to load in the morning. We noticed it during a weekend session while using a wireless office network."
+    },
+    "CUS-0047": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Switching between pages is painfully slow. We noticed it while working remotely while using a home office setup."
+    },
+    "CUS-0048": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Search results take several seconds to appear. We noticed it during a morning session while using a personal device."
+    },
+    "CUS-0049": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The application feels sluggish when many records are open. We noticed it near the end of the workday while using a remote session."
+    },
+    "CUS-0050": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Loading the analytics screen is much slower than before. We noticed it while preparing a client deliverable while using a laptop."
+    },
+    "CUS-0051": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The analytics summary screen takes a long time to open. We noticed it during a scheduled work session while using a browser window."
+    },
+    "CUS-0052": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Filtering a large list makes the page lag. We noticed it during an afternoon session while using a desktop computer."
+    },
+    "CUS-0053": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The app is slow when I search across projects. We noticed it during a weekday session while using a standard work session."
+    },
+    "CUS-0054": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The dashboard spinner stays on screen for too long. We noticed it during a team review while using a tablet."
+    },
+    "CUS-0055": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Pages respond slowly when several team members are online. We noticed it at the start of the workday while using a new device."
+    },
+    "CUS-0056": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The dashboard takes too long to load in the morning. We noticed it after lunch while using a phone."
+    },
+    "CUS-0057": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Switching between pages is painfully slow. We noticed it during a weekend session while using a wired office network."
+    },
+    "CUS-0058": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Search results take several seconds to appear. We noticed it while working remotely while using a shared workstation."
+    },
+    "CUS-0059": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The application feels sluggish when many records are open. We noticed it during a morning session while using a wireless office network."
+    },
+    "CUS-0060": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Loading the analytics screen is much slower than before. We noticed it near the end of the workday while using a home office setup."
+    },
+    "CUS-0061": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The analytics summary screen takes a long time to open. We noticed it while preparing a client deliverable while using a personal device."
+    },
+    "CUS-0062": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Filtering a large list makes the page lag. We noticed it during a scheduled work session while using a remote session."
+    },
+    "CUS-0063": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The app is slow when I search across projects. We noticed it during an afternoon session while using a laptop."
+    },
+    "CUS-0064": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The dashboard spinner stays on screen for too long. We noticed it during a weekday session while using a browser window."
+    },
+    "CUS-0065": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Pages respond slowly when several team members are online. We noticed it during a team review while using a desktop computer."
+    },
+    "CUS-0066": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The exported spreadsheet is missing several columns. We noticed it during a team review while using a home office setup."
+    },
+    "CUS-0067": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "I cannot choose a date range before exporting a report. We noticed it at the start of the workday while using a personal device."
+    },
+    "CUS-0068": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The PDF report layout breaks across pages. We noticed it after lunch while using a remote session."
+    },
+    "CUS-0069": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "Report exports fail when I select more than one team. We noticed it during a weekend session while using a laptop."
+    },
+    "CUS-0070": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "I need a scheduled weekly report export. We noticed it while working remotely while using a browser window."
+    },
+    "CUS-0071": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The CSV download contains the wrong date format. We noticed it during a morning session while using a desktop computer."
+    },
+    "CUS-0072": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The export button does not include archived records. We noticed it near the end of the workday while using a standard work session."
+    },
+    "CUS-0073": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "I cannot export the chart with its data table. We noticed it while preparing a client deliverable while using a tablet."
+    },
+    "CUS-0074": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The report downloads with blank rows at the bottom. We noticed it during a scheduled work session while using a new device."
+    },
+    "CUS-0075": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The monthly report is missing the summary section. We noticed it during an afternoon session while using a phone."
+    },
+    "CUS-0076": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The exported spreadsheet is missing several columns. We noticed it during a weekday session while using a wired office network."
+    },
+    "CUS-0077": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "I cannot choose a date range before exporting a report. We noticed it during a team review while using a shared workstation."
+    },
+    "CUS-0078": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The PDF report layout breaks across pages. We noticed it at the start of the workday while using a wireless office network."
+    },
+    "CUS-0079": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "Report exports fail when I select more than one team. We noticed it after lunch while using a home office setup."
+    },
+    "CUS-0080": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "I need a scheduled weekly report export. We noticed it during a weekend session while using a personal device."
+    },
+    "CUS-0081": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The CSV download contains the wrong date format. We noticed it while working remotely while using a remote session."
+    },
+    "CUS-0082": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The export button does not include archived records. We noticed it during a morning session while using a laptop."
+    },
+    "CUS-0083": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "I cannot export the chart with its data table. We noticed it near the end of the workday while using a browser window."
+    },
+    "CUS-0084": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The report downloads with blank rows at the bottom. We noticed it while preparing a client deliverable while using a desktop computer."
+    },
+    "CUS-0085": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The monthly report is missing the summary section. We noticed it during a scheduled work session while using a standard work session."
+    },
+    "CUS-0086": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The exported spreadsheet is missing several columns. We noticed it during an afternoon session while using a tablet."
+    },
+    "CUS-0087": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "I cannot choose a date range before exporting a report. We noticed it during a weekday session while using a new device."
+    },
+    "CUS-0088": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The PDF report layout breaks across pages. We noticed it during a team review while using a phone."
+    },
+    "CUS-0089": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "Report exports fail when I select more than one team. We noticed it at the start of the workday while using a wired office network."
+    },
+    "CUS-0090": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "I need a scheduled weekly report export. We noticed it after lunch while using a shared workstation."
+    },
+    "CUS-0091": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The CSV download contains the wrong date format. We noticed it during a weekend session while using a wireless office network."
+    },
+    "CUS-0092": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The export button does not include archived records. We noticed it while working remotely while using a home office setup."
+    },
+    "CUS-0093": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "I cannot export the chart with its data table. We noticed it during a morning session while using a personal device."
+    },
+    "CUS-0094": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "It is difficult to find the settings page. We noticed it during a morning session while using a new device."
+    },
+    "CUS-0095": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "The navigation labels are confusing for a new user. We noticed it near the end of the workday while using a phone."
+    },
+    "CUS-0096": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "There are too many clicks to reach saved views. We noticed it while preparing a client deliverable while using a wired office network."
+    },
+    "CUS-0097": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "The filter controls are hard to understand. We noticed it during a scheduled work session while using a shared workstation."
+    },
+    "CUS-0098": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "The layout on the main screen is cluttered. We noticed it during an afternoon session while using a wireless office network."
+    },
+    "CUS-0099": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "I cannot tell which menu contains team permissions. We noticed it during a weekday session while using a home office setup."
+    },
+    "CUS-0100": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "The page labels do not explain what each option does. We noticed it during a team review while using a personal device."
+    },
+    "CUS-0101": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application crashes when I export a report. We noticed it while working remotely while using a remote session."
+    },
+    "CUS-0102": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "The settings menu is difficult to navigate. We noticed it after lunch while using a laptop."
+    },
+    "CUS-0103": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "The dashboard buttons are not clearly labelled. We noticed it during a weekend session while using a browser window."
+    },
+    "CUS-0104": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "My session closes unexpectedly during an edit. We noticed it during a team review while using a phone."
+    },
+    "CUS-0105": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "The navigation labels are confusing for a new user. We noticed it during a morning session while using a standard work session."
+    },
+    "CUS-0106": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "There are too many clicks to reach saved views. We noticed it near the end of the workday while using a tablet."
+    },
+    "CUS-0107": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application becomes unresponsive when I upload a large file. We noticed it while preparing a client deliverable while using a laptop."
+    },
+    "CUS-0108": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "The layout on the main screen is cluttered. We noticed it during a scheduled work session while using a phone."
+    },
+    "CUS-0109": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "I cannot tell which menu contains team permissions. We noticed it during an afternoon session while using a wired office network."
+    },
+    "CUS-0110": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The mobile app freezes after I open the dashboard. We noticed it during a weekend session while using a wired office network."
+    },
+    "CUS-0111": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "Finding the activity history takes several steps. We noticed it during a team review while using a wireless office network."
+    },
+    "CUS-0112": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "The settings menu is difficult to navigate. We noticed it at the start of the workday while using a home office setup."
+    },
+    "CUS-0113": {
+      "expected_theme": "Crashes & Stability",
+      "source_text": "The application stops responding when I open a large customer list. We noticed it during a weekday session while using a browser window."
+    },
+    "CUS-0114": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "It is difficult to find the settings page. We noticed it during a weekend session while using a remote session."
+    },
+    "CUS-0115": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "The navigation labels are confusing for a new user. We noticed it while working remotely while using a laptop."
+    },
+    "CUS-0116": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The dashboard takes too long to load in the morning. We noticed it while working remotely while using a remote session."
+    },
+    "CUS-0117": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "The filter controls are hard to understand. We noticed it near the end of the workday while using a desktop computer."
+    },
+    "CUS-0118": {
+      "expected_theme": "Navigation & Usability",
+      "source_text": "The layout on the main screen is cluttered. We noticed it while preparing a client deliverable while using a standard work session."
+    },
+    "CUS-0119": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The app is slow when I search across projects. We noticed it during a team review while using a phone."
+    },
+    "CUS-0120": {
+      "expected_theme": "Authentication & Account Access",
+      "source_text": "I cannot sign in even though my password is correct. We noticed it during an afternoon session while using a personal device."
+    },
+    "CUS-0121": {
+      "expected_theme": "Authentication & Account Access",
+      "source_text": "The two factor authentication code is not accepted. We noticed it during a weekday session while using a remote session."
+    },
+    "CUS-0122": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Loading the analytics screen is much slower than before. We noticed it while preparing a client deliverable while using a laptop."
+    },
+    "CUS-0123": {
+      "expected_theme": "Authentication & Account Access",
+      "source_text": "I need a way to change the account email address. We noticed it at the start of the workday while using a browser window."
+    },
+    "CUS-0124": {
+      "expected_theme": "Authentication & Account Access",
+      "source_text": "The login page rejects my valid credentials. We noticed it after lunch while using a desktop computer."
+    },
+    "CUS-0125": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "Switching between pages is painfully slow. We noticed it during a weekend session while using a wired office network."
+    },
+    "CUS-0126": {
+      "expected_theme": "Authentication & Account Access",
+      "source_text": "I am locked out after resetting my password. We noticed it while working remotely while using a tablet."
+    },
+    "CUS-0127": {
+      "expected_theme": "Authentication & Account Access",
+      "source_text": "The sign in code arrives after it has expired. We noticed it during a morning session while using a new device."
+    },
+    "CUS-0128": {
+      "expected_theme": "Performance & Speed",
+      "source_text": "The dashboard spinner stays on screen for too long. We noticed it during a weekday session while using a browser window."
+    },
+    "CUS-0129": {
+      "expected_theme": "Authentication & Account Access",
+      "source_text": "The password reset link expires before I can use it. We noticed it while preparing a client deliverable while using a wired office network."
+    },
+    "CUS-0130": {
+      "expected_theme": "Authentication & Account Access",
+      "source_text": "I cannot sign in even though my password is correct. We noticed it during a scheduled work session while using a shared workstation."
+    },
+    "CUS-0131": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The CSV download contains the wrong date format. We noticed it during a morning session while using a desktop computer."
+    },
+    "CUS-0132": {
+      "expected_theme": "Authentication & Account Access",
+      "source_text": "Invited team members cannot activate their accounts. We noticed it during a weekday session while using a home office setup."
+    },
+    "CUS-0133": {
+      "expected_theme": "Authentication & Account Access",
+      "source_text": "I need a way to change the account email address. We noticed it during a team review while using a personal device."
+    },
+    "CUS-0134": {
+      "expected_theme": "Reporting & Export",
+      "source_text": "The PDF report layout breaks across pages. We noticed it at the start of the workday while using a wireless office network."
+    },
+    "CUS-0135": {
+      "expected_theme": "Authentication & Account Access",
+      "source_text": "The account activation email never arrives. We noticed it after lunch while using a laptop."
+    },
+    "CUS-0136": {
+      "expected_theme": "Authentication & Account Access",
+      "source_text": "I am locked out after resetting my password. We noticed it during a weekend session while using a browser window."
+    },
+    "CUS-0137": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "Changes made on my laptop do not appear on the web app. We noticed it during an afternoon session while using a wired office network."
+    },
+    "CUS-0138": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "Some records disappear after the page refreshes. We noticed it during a weekday session while using a shared workstation."
+    },
+    "CUS-0139": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "The latest uploaded data is not syncing to the dashboard. We noticed it during a team review while using a wireless office network."
+    },
+    "CUS-0140": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "I see duplicate records after synchronisation. We noticed it at the start of the workday while using a home office setup."
+    },
+    "CUS-0141": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "Edits are not saved reliably when the connection drops. We noticed it after lunch while using a personal device."
+    },
+    "CUS-0142": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "The dashboard is showing yesterday's data. We noticed it during a weekend session while using a remote session."
+    },
+    "CUS-0143": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "Updates from the mobile app are missing on desktop. We noticed it while working remotely while using a laptop."
+    },
+    "CUS-0144": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "Some customer records disappear after saving. We noticed it during a morning session while using a browser window."
+    },
+    "CUS-0145": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "The background sync stops before all rows are uploaded. We noticed it near the end of the workday while using a desktop computer."
+    },
+    "CUS-0146": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "My latest changes are not saved after reconnecting. We noticed it while preparing a client deliverable while using a standard work session."
+    },
+    "CUS-0147": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "Changes made on my laptop do not appear on the web app. We noticed it during a scheduled work session while using a tablet."
+    },
+    "CUS-0148": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "Some records disappear after the page refreshes. We noticed it during an afternoon session while using a new device."
+    },
+    "CUS-0149": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "The latest uploaded data is not syncing to the dashboard. We noticed it during a weekday session while using a phone."
+    },
+    "CUS-0150": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "I see duplicate records after synchronisation. We noticed it during a team review while using a wired office network."
+    },
+    "CUS-0151": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "Edits are not saved reliably when the connection drops. We noticed it at the start of the workday while using a shared workstation."
+    },
+    "CUS-0152": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "The dashboard is showing yesterday's data. We noticed it after lunch while using a wireless office network."
+    },
+    "CUS-0153": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "Updates from the mobile app are missing on desktop. We noticed it during a weekend session while using a home office setup."
+    },
+    "CUS-0154": {
+      "expected_theme": "Data Sync & Reliability",
+      "source_text": "Some customer records disappear after saving. We noticed it while working remotely while using a personal device."
+    },
+    "CUS-0155": {
+      "expected_theme": "Integrations",
+      "source_text": "The Slack integration disconnects every few days. We noticed it during an afternoon session while using a personal device."
+    },
+    "CUS-0156": {
+      "expected_theme": "Integrations",
+      "source_text": "The API documentation does not explain pagination clearly. We noticed it during a weekday session while using a remote session."
+    },
+    "CUS-0157": {
+      "expected_theme": "Integrations",
+      "source_text": "I cannot connect our CRM to the application. We noticed it during a team review while using a laptop."
+    },
+    "CUS-0158": {
+      "expected_theme": "Integrations",
+      "source_text": "The calendar integration is not importing new events. We noticed it at the start of the workday while using a browser window."
+    },
+    "CUS-0159": {
+      "expected_theme": "Integrations",
+      "source_text": "Please add an integration for our project management tool. We noticed it after lunch while using a desktop computer."
+    },
+    "CUS-0160": {
+      "expected_theme": "Integrations",
+      "source_text": "The CRM connector fails to authenticate. We noticed it during a weekend session while using a standard work session."
+    },
+    "CUS-0161": {
+      "expected_theme": "Integrations",
+      "source_text": "Our calendar connection stopped updating appointments. We noticed it while working remotely while using a tablet."
+    },
+    "CUS-0162": {
+      "expected_theme": "Integrations",
+      "source_text": "The API response is missing the owner field. We noticed it during a morning session while using a new device."
+    },
+    "CUS-0163": {
+      "expected_theme": "Integrations",
+      "source_text": "I cannot link the application to our support platform. We noticed it near the end of the workday while using a phone."
+    },
+    "CUS-0164": {
+      "expected_theme": "Integrations",
+      "source_text": "The Slack connection needs to be authorised again each week. We noticed it while preparing a client deliverable while using a wired office network."
+    },
+    "CUS-0165": {
+      "expected_theme": "Integrations",
+      "source_text": "The Slack integration disconnects every few days. We noticed it during a scheduled work session while using a shared workstation."
+    },
+    "CUS-0166": {
+      "expected_theme": "Integrations",
+      "source_text": "The API documentation does not explain pagination clearly. We noticed it during an afternoon session while using a wireless office network."
+    },
+    "CUS-0167": {
+      "expected_theme": "Integrations",
+      "source_text": "I cannot connect our CRM to the application. We noticed it during a weekday session while using a home office setup."
+    },
+    "CUS-0168": {
+      "expected_theme": "Integrations",
+      "source_text": "The calendar integration is not importing new events. We noticed it during a team review while using a personal device."
+    },
+    "CUS-0169": {
+      "expected_theme": "Billing & Subscription",
+      "source_text": "I was charged twice for this month's subscription. We noticed it during a morning session while using a new device."
+    },
+    "CUS-0170": {
+      "expected_theme": "Billing & Subscription",
+      "source_text": "The invoice does not show our company tax details. We noticed it near the end of the workday while using a phone."
+    },
+    "CUS-0171": {
+      "expected_theme": "Billing & Subscription",
+      "source_text": "I cannot find where to change the subscription plan. We noticed it while preparing a client deliverable while using a wired office network."
+    },
+    "CUS-0172": {
+      "expected_theme": "Billing & Subscription",
+      "source_text": "The payment failed but my card shows a pending charge. We noticed it during a scheduled work session while using a shared workstation."
+    },
+    "CUS-0173": {
+      "expected_theme": "Billing & Subscription",
+      "source_text": "Please explain how to cancel the subscription. We noticed it during an afternoon session while using a wireless office network."
+    },
+    "CUS-0174": {
+      "expected_theme": "Billing & Subscription",
+      "source_text": "Our invoice has the wrong billing address. We noticed it during a weekday session while using a home office setup."
+    },
+    "CUS-0175": {
+      "expected_theme": "Billing & Subscription",
+      "source_text": "The monthly plan price changed without an explanation. We noticed it during a team review while using a personal device."
+    },
+    "CUS-0176": {
+      "expected_theme": "Billing & Subscription",
+      "source_text": "I need a receipt for the last payment. We noticed it at the start of the workday while using a remote session."
+    },
+    "CUS-0177": {
+      "expected_theme": "Billing & Subscription",
+      "source_text": "The billing page still shows an unpaid invoice after payment. We noticed it after lunch while using a laptop."
+    },
+    "CUS-0178": {
+      "expected_theme": "Billing & Subscription",
+      "source_text": "Please clarify the renewal date for our annual plan. We noticed it during a weekend session while using a browser window."
+    },
+    "CUS-0179": {
+      "expected_theme": "Billing & Subscription",
+      "source_text": "I was charged twice for this month's subscription. We noticed it while working remotely while using a desktop computer."
+    },
+    "CUS-0180": {
+      "expected_theme": "Billing & Subscription",
+      "source_text": "The invoice does not show our company tax details. We noticed it during a morning session while using a standard work session."
+    },
+    "CUS-0181": {
+      "expected_theme": "Feature Requests",
+      "source_text": "Please add keyboard shortcuts for common actions. We noticed it during a weekend session while using a phone."
+    },
+    "CUS-0182": {
+      "expected_theme": "Feature Requests",
+      "source_text": "I would like to save custom dashboard views. We noticed it while working remotely while using a wired office network."
+    },
+    "CUS-0183": {
+      "expected_theme": "Feature Requests",
+      "source_text": "It would help to have a dark mode option. We noticed it during a morning session while using a shared workstation."
+    },
+    "CUS-0184": {
+      "expected_theme": "Feature Requests",
+      "source_text": "Please add bulk editing for customer records. We noticed it near the end of the workday while using a wireless office network."
+    },
+    "CUS-0185": {
+      "expected_theme": "Feature Requests",
+      "source_text": "I wish there was an option to assign comments to teammates. We noticed it while preparing a client deliverable while using a home office setup."
+    },
+    "CUS-0186": {
+      "expected_theme": "Feature Requests",
+      "source_text": "Could you add a calendar view for upcoming tasks. We noticed it during a scheduled work session while using a personal device."
+    },
+    "CUS-0187": {
+      "expected_theme": "Feature Requests",
+      "source_text": "We need an option to export saved filters. We noticed it during an afternoon session while using a remote session."
+    },
+    "CUS-0188": {
+      "expected_theme": "Feature Requests",
+      "source_text": "Please add custom fields to the customer profile. We noticed it during a weekday session while using a laptop."
+    },
+    "CUS-0189": {
+      "expected_theme": "Feature Requests",
+      "source_text": "I would like to pin frequently used reports. We noticed it during a team review while using a browser window."
+    },
+    "CUS-0190": {
+      "expected_theme": "Feature Requests",
+      "source_text": "It would help to schedule reminders from the task page. We noticed it at the start of the workday while using a desktop computer."
+    },
+    "CUS-0191": {
+      "expected_theme": "Positive Feedback",
+      "source_text": "The new dashboard is easy to use and looks great. We noticed it while preparing a client deliverable while using a shared workstation."
+    },
+    "CUS-0192": {
+      "expected_theme": "Positive Feedback",
+      "source_text": "Your support team was helpful and resolved my issue quickly. We noticed it during a scheduled work session while using a wireless office network."
+    },
+    "CUS-0193": {
+      "expected_theme": "Positive Feedback",
+      "source_text": "The reporting workflow is much better after the latest update. We noticed it during an afternoon session while using a home office setup."
+    },
+    "CUS-0194": {
+      "expected_theme": "Positive Feedback",
+      "source_text": "I love how quickly I can find customer information. We noticed it during a weekday session while using a personal device."
+    },
+    "CUS-0195": {
+      "expected_theme": "Positive Feedback",
+      "source_text": "The application has made our weekly review much easier. We noticed it during a team review while using a remote session."
+    },
+    "CUS-0196": {
+      "expected_theme": "Positive Feedback",
+      "source_text": "The new search feature works perfectly for our team. We noticed it at the start of the workday while using a laptop."
+    },
+    "CUS-0197": {
+      "expected_theme": "Positive Feedback",
+      "source_text": "The onboarding guide was clear and helpful. We noticed it after lunch while using a browser window."
+    },
+    "CUS-0198": {
+      "expected_theme": "Positive Feedback",
+      "source_text": "The updated interface looks excellent. We noticed it during a weekend session while using a desktop computer."
+    },
+    "CUS-0199": {
+      "expected_theme": "Positive Feedback",
+      "source_text": "I appreciate how easy it is to organise projects. We noticed it while working remotely while using a standard work session."
+    },
+    "CUS-0200": {
+      "expected_theme": "Positive Feedback",
+      "source_text": "The recent improvements made the app much more useful. We noticed it during a morning session while using a tablet."
+    }
+  }
+}
