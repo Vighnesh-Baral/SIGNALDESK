@@ -17,7 +17,11 @@ def test_retrieval_matches_theme_and_feedback_words():
     assert {item["record_id"] for item in rows} == {"FB-001", "FB-002"}
 
 
-def test_answer_only_returns_citations_in_retrieved_evidence():
+def test_answer_only_returns_citations_in_retrieved_evidence(monkeypatch):
+    # The expected provenance is Qwen3/Ollama; do not inherit the developer .env.
+    from app.services import llm_service
+    monkeypatch.setattr(llm_service, "LLM_PROVIDER", "ollama")
+
     def model(_prompt):
         assert '"mention_count"' in _prompt
         return {"answer": "Customers describe slow dashboard and analytics loading.", "record_ids": ["FB-001", "FB-999"], "caveat": "No timing telemetry was included."}

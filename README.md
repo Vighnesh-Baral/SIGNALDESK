@@ -1,15 +1,16 @@
-# SIGNALDESK v1.1.0
+# SIGNALDESK v1.3.0
 
 **Evidence-First Customer Research & Product Decision Agent**  
 *Turn messy customer feedback into source-traceable product investigations and review-ready decisions.*
 
-SIGNALDESK ingests structured and unstructured customer feedback, classifies problems with a local Ollama model (Qwen3 4B by default), calculates counts in Python, preserves evidence references, compares datasets, and produces draft product decision artifacts. Numerical metrics are deterministic. AI-generated explanations, hypotheses, prioritisation aids and documents are labelled for human review.
+SIGNALDESK ingests structured and unstructured customer feedback, classifies problems with local Ollama or a configured hosted LLM provider, calculates counts in Python, preserves evidence references, records analysis metadata in PostgreSQL, stores files under a configurable storage root, compares datasets, and produces draft product decision artifacts. Numerical metrics are deterministic. AI-generated explanations, hypotheses, prioritisation aids and documents are labelled for human review.
 
-## v1.1 experience
+## Workspace experience
 
 - Public scroll-based product landing page at `/` with product story, capabilities, evidence standards and workspace calls to action.
 - Separate application workspace at `/app` with a light premium SaaS layout, modular dashboard panels, restrained Liquid Glass surfaces and subtle motion.
 - Workspace navigation: Overview, Analyse feedback, Investigations, Customers, Trends & comparison, Ask SIGNALDESK, and Reports & decisions.
+- Select or create a research workspace when submitting feedback; recent analyses can be listed and restored from persistent history using the configured bearer token.
 - Actual analysis results populate workspace metrics, visual theme distribution, AI provenance, emotion signals, trend analysis, problem investigations, clusters, customer segments, evidence, Q&A and report links.
 - Responsive layout and `prefers-reduced-motion` support. Inline SVG illustrations avoid reliance on stock images or remote image assets.
 
@@ -24,7 +25,7 @@ SIGNALDESK ingests structured and unstructured customer feedback, classifies pro
 - Extractor source references are preserved where possible (PDF page/paragraph, HTML element, DOCX paragraph/table row, JSON property path).
 
 ### Customer and problem intelligence
-- Qwen3 classification into a controlled set of customer problem themes, with per-record Qwen3/fallback provenance.
+- Provider-neutral classification into controlled customer problem themes, with per-record model/fallback provenance. Local Ollama/Qwen3, Groq, OpenRouter and custom OpenAI-compatible endpoints are supported.
 - Exact duplicate flags retain all submitted mentions.
 - Similarity clustering groups records within the same classified theme. If `OLLAMA_EMBED_MODEL` is set to an installed Ollama embedding model, vectors are used. Otherwise, character n-gram TF-IDF runs locally on CPU. TF-IDF is lexical wording similarity, not deep semantic understanding. The method is shown in the result.
 - Customer segmentation recognises metadata such as plan, region, country, device, platform, customer segment/type and industry. Counts use feedback-record denominators; they are not automatically customer incidence rates.
@@ -37,6 +38,13 @@ SIGNALDESK ingests structured and unstructured customer feedback, classifies pro
 - Bug/problem report drafts, PRD drafts, user stories and proposed acceptance criteria. These are templates derived from source themes and require product/engineering validation.
 - Grounded Ask SIGNALDESK Q&A with citations restricted to retrieved source records.
 
+### Persistence, deployment and security
+- SQLAlchemy models and Alembic migration for projects, datasets, analyses, themes, evidence and report metadata. A Default Workspace is seeded automatically; authenticated APIs can create workspaces and scope analysis history. Local development defaults to SQLite; hosted deployment can use PostgreSQL (e.g. Supabase).
+- Configurable file roots for uploads, processed data, generated reports and temporary files. Render deployment blueprint mounts a Persistent Disk at `/var/data`.
+- Retention cleanup for source uploads, generated artifacts and temporary files; defaults are 30 days, 90 days and 24 hours respectively.
+- Bearer-token protection for analysis, history, result retrieval, Q&A, integration actions and report downloads. Public health and Nonilion manifest routes expose configuration status only, not secret values.
+- `/api/health/ready` checks storage, configured inference and the database when `DATABASE_REQUIRED=true`.
+
 ### Reports and integrations
 - Excel: Overview, Theme Findings, Evidence Register, Investigation Cards, Trend Analysis, Problem Clusters, Customer Segments, Decision Pack and Processed Feedback.
 - PDF research brief, theme chart and combined Markdown product decision pack.
@@ -46,7 +54,7 @@ SIGNALDESK ingests structured and unstructured customer feedback, classifies pro
 ## Requirements
 
 - Python 3.11 or newer (Python 3.12 recommended).
-- Ollama installed and running with `qwen3:4b` pulled locally.
+- Ollama installed and running with `qwen3:4b` pulled locally when using local inference. Hosted inference does not require Ollama on the server.
 - Windows PowerShell, macOS or Linux.
 - Tesseract OCR executable only if scanned PDF OCR is needed.
 
@@ -66,6 +74,7 @@ py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
+alembic upgrade head
 Copy-Item .env.example .env  # only if .env does not exist
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
@@ -98,7 +107,32 @@ CLUSTERING_MAX_RECORDS=2500
 PDF_OCR_ENABLED=true
 ```
 
-Only set `OLLAMA_EMBED_MODEL` after pulling a compatible embedding model in Ollama. On a 6 GB GPU, benchmark it alongside Qwen3 before enabling it; the project does not load an embedding model by default.
+Only set `OLLAMA_EMBED_MODEL` after pulling a compatible embedding model in Ollama.
+
+Hosted LLM configuration (keep keys in `.env` locally or Render environment variables in production):
+
+```dotenv
+LLM_PROVIDER=groq
+LLM_API_KEY=your-groq-api-key
+LLM_MODEL=your-selected-groq-model
+LLM_FALLBACK_PROVIDER=openrouter
+LLM_FALLBACK_API_KEY=your-openrouter-api-key
+LLM_FALLBACK_MODEL=your-selected-openrouter-model
+```
+
+The primary provider is attempted first. A configured fallback is attempted only for provider capacity/rate-limit, transport or server-availability failures. Invalid credentials and invalid model responses are surfaced rather than silently retried against another provider. Local mode remains `LLM_PROVIDER=ollama`.
+
+### Deployment (Render + PostgreSQL)
+
+A starter Render Blueprint is included in `render.yaml`. It configures a paid web service with a 1 GB Persistent Disk mounted at `/var/data`, runs Alembic migrations before deployment, and starts FastAPI with Uvicorn. Review the plan, region and disk size before provisioning; the Render Persistent Disk feature is not available on the free web-service tier, and the disk is attached to a single service instance.
+
+1. Create a PostgreSQL project (Supabase is one supported managed provider) and copy its PostgreSQL connection URI. Use the provider's recommended connection pooler/connection string appropriate for your deployment.
+2. Create or connect the GitHub repository in Render and select the Blueprint. Supply `DATABASE_URL`, `LLM_API_KEY`, `LLM_MODEL`, `LLM_FALLBACK_API_KEY`, `LLM_FALLBACK_MODEL` and `PUBLIC_BASE_URL` when prompted. Render generates `SIGNALDESK_API_TOKEN` from the Blueprint configuration; store it securely.
+3. Confirm `SIGNALDESK_STORAGE_ROOT=/var/data`, `DATABASE_REQUIRED=true` and `ALLOW_UNAUTHENTICATED_LOCAL=false` are set in the deployed environment.
+4. After deployment, test `/api/health`, `/api/health/ready`, authenticated uploads, analysis history and report downloads. Do not expose database or provider credentials in the browser.
+5. Back up PostgreSQL separately. Supabase Free projects can pause after inactivity and have quota/backup limitations; confirm the current provider plan before using it for production customer data.
+
+The Blueprint is a deployment template, not a provisioned environment. Actual hosting, database connectivity, hosted inference and public HTTPS must be verified with your own provider accounts and credentials. See [`docs/deployment_v1.3.md`](docs/deployment_v1.3.md) for a configuration checklist. On a 6 GB GPU, benchmark it alongside Qwen3 before enabling it; the project does not load an embedding model by default.
 
 ### Optional external integrations
 
@@ -128,13 +162,17 @@ NOTION_VERSION=2022-06-28
 
 Provider secrets are read from environment variables and are never returned by the health/status endpoint. For Jira, ensure the token can create issues in the selected project; for Linear, the key must access the target team; for GitHub, the token needs repository Issues write permission; for Notion, share the target page/database with the integration and configure its actual title property name. Preview payloads before making any external write.
 
-Set `SIGNALDESK_API_TOKEN` to a long random value before public exposure and set `PUBLIC_BASE_URL` to the public HTTPS URL. Do not expose the Ollama port publicly. Artifact/result GET endpoints are currently link-accessible and require an access-control review before using the service with sensitive production feedback on a public host.
+Set `SIGNALDESK_API_TOKEN` and `PUBLIC_BASE_URL` before public exposure. Do not expose the Ollama port publicly. Analysis, history, result and artifact endpoints require a bearer token when the application is in public mode. The frontend download helper attaches the token from its API token field.
 
 ## API endpoints
 
 | Method | Endpoint | Purpose |
 |---|---|---|
-| `GET` | `/api/health` | Service readiness, supported formats and integration configuration status |
+| `GET` | `/api/health` | Service health, supported formats and integration configuration status |
+| `GET` | `/api/health/ready` | Deployment readiness: storage, configured inference and required database connectivity |
+| `GET` | `/api/projects` | List workspaces available to the shared API token |
+| `POST` | `/api/projects` | Create a workspace |
+| `GET` | `/api/analyses` | Authenticated recent analysis metadata/history; optional `project_id` filter |
 | `POST` | `/api/analyze` | Upload a supported feedback file |
 | `POST` | `/api/analyze/text` | Analyse bulk pasted feedback or one complaint |
 | `GET` | `/api/jobs/{job_id}` | Retrieve a completed analysis |
@@ -150,7 +188,7 @@ Set `SIGNALDESK_API_TOKEN` to a long random value before public exposure and set
 | `GET` | `/api/nonilion/manifest` | Normalized agent integration metadata |
 | `POST` | `/api/nonilion/webhook` | Normalized Nonilion message/file event |
 
-All analysis and external-integration POST operations are protected by bearer token when `SIGNALDESK_API_TOKEN` is configured. Unauthenticated access is allowed only for localhost development when no public base URL is configured. The normalized Nonilion event format is not a verified native Nonilion schema; follow `docs/nonilion_integration.md`.
+All analysis and external-integration POST operations are protected by bearer token when `SIGNALDESK_API_TOKEN` is configured. Unauthenticated access is allowed only for localhost development when no public base URL is configured. The normalized Nonilion event format is not a verified native Nonilion schema; follow `docs/nonilion_integration.md`. Project/workspace isolation is by explicit `project_id` only; v1.3 uses one shared bearer token and does not provide user accounts or role-based permissions.
 
 ## Tests and smoke test
 
@@ -159,7 +197,7 @@ python -m pytest -q
 python scripts/smoke_test.py
 ```
 
-The offline smoke test uses the keyword fallback on a synthetic 200-record dataset and validates generated reports. Its historical 99.5% agreement with synthetic labels is a controlled QA check, not real-world accuracy. Live Qwen3 inference, OCR on actual scanned PDFs, and all provider writes must be tested in their target environments.
+The offline smoke test uses the keyword fallback on a synthetic 200-record dataset and validates generated reports. Its 99.5% agreement with synthetic labels is a controlled QA check, not real-world accuracy. Live hosted/local model inference, OCR on actual scanned PDFs, and all provider writes must be tested in their target environments.
 
 ## Sample data
 

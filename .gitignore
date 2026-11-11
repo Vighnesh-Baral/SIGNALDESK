@@ -5,21 +5,45 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
+.coverage
+htmlcov/
 
 # Secrets
 .env
 .env.*.local
 
-# Runtime data and generated reports
+# Runtime data, local databases and generated reports
+*.db
+*.db-shm
+*.db-wal
 data/uploads/*
 data/processed/*
 outputs/*
+temp/*
 !data/uploads/.gitkeep
 !data/processed/.gitkeep
 !outputs/.gitkeep
+!temp/.gitkeep
+
+# Local model files
+*.gguf
+models/
+ollama/
+
+# Logs and temporary files
+*.log
+*.tmp
 
 # Editor / OS
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Python coverage / local DB artifacts
+*.sqlite
+*.sqlite3
+
+# Additional local virtual environments
+.ven/
+.venv-new/

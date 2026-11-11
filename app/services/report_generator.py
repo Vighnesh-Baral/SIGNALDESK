@@ -58,10 +58,12 @@ def _make_excel(result: dict, output_path: Path) -> None:
         {"Metric": "Exact duplicate mentions retained", "Value": result["dataset"]["exact_duplicate_mentions"]},
         {"Metric": "Unique normalized feedback", "Value": result["dataset"]["unique_normalized_feedback"]},
         {"Metric": "Themes identified", "Value": result["summary"]["themes_identified"]},
-        {"Metric": "Classified by Qwen3", "Value": ai.get("qwen3_records", "Not recorded")},
+        {"Metric": "Classified by AI model", "Value": ai.get("llm_records", ai.get("qwen3_records", "Not recorded"))},
+        {"Metric": "Classified locally by Ollama", "Value": ai.get("local_ollama_records", ai.get("qwen3_records", "Not recorded"))},
+        {"Metric": "Classified by hosted LLM", "Value": ai.get("hosted_llm_records", 0)},
         {"Metric": "Classified by keyword fallback", "Value": ai.get("fallback_records", "Not recorded")},
         {"Metric": "Unreported classification method", "Value": ai.get("unreported_records", "Not recorded")},
-        {"Metric": "Qwen3 share of valid records (%)", "Value": ai.get("qwen3_percentage", "Not recorded")},
+        {"Metric": "AI model share of valid records (%)", "Value": ai.get("llm_percentage", ai.get("qwen3_percentage", "Not recorded"))},
         {"Metric": "High urgency language signals", "Value": result["summary"].get("high_urgency_records", 0)},
         {"Metric": "Emotion language signals", "Value": json.dumps(result["summary"].get("emotion_breakdown", {}), ensure_ascii=False)},
         {"Metric": "Urgency language signals", "Value": json.dumps(result["summary"].get("urgency_breakdown", {}), ensure_ascii=False)},
@@ -262,10 +264,12 @@ def _make_pdf(result: dict, chart_path: Path, output_path: Path) -> None:
         ["Valid records", str(result["dataset"]["total_valid_records"])],
         ["Exact duplicate mentions retained", str(result["dataset"]["exact_duplicate_mentions"])],
         ["Themes identified", str(result["summary"]["themes_identified"])],
-        ["Classified by Qwen3", str(ai.get("qwen3_records", "Not recorded"))],
+        ["Classified by AI model", str(ai.get("llm_records", ai.get("qwen3_records", "Not recorded")))],
+        ["Classified locally by Ollama", str(ai.get("local_ollama_records", ai.get("qwen3_records", "Not recorded")))],
+        ["Classified by hosted LLM", str(ai.get("hosted_llm_records", 0))],
         ["Classified by keyword fallback", str(ai.get("fallback_records", "Not recorded"))],
         ["Unreported classification method", str(ai.get("unreported_records", "Not recorded"))],
-        ["Qwen3 share of valid records", f"{ai.get('qwen3_percentage', 'Not recorded')}%" if "qwen3_percentage" in ai else "Not recorded"],
+        ["AI model share of valid records", f"{ai.get('llm_percentage', ai.get('qwen3_percentage', 'Not recorded'))}%"],
         ["High urgency language signals", str(result["summary"].get("high_urgency_records", 0))],
         ["Emotion language signals", json.dumps(result["summary"].get("emotion_breakdown", {}), ensure_ascii=False)],
     ]
@@ -373,9 +377,8 @@ def _make_pdf(result: dict, chart_path: Path, output_path: Path) -> None:
         "severity, revenue impact, or causal root cause. Evidence breadth describes distinct wording patterns, "
         "not statistical confidence. Emotion and urgency are language signals, not clinical or business-risk "
         "assessments. Trend comparisons use two adjacent windows anchored to the latest parseable date in "
-        "the uploaded data. Theme labels are Qwen3-assisted when Ollama is "
-        "available; if the model is unavailable, a keyword fallback is used and marked per record in "
-        "the Processed Feedback sheet.", styles["SmallCell"],
+        "the uploaded data. Theme labels are AI-assisted by the configured model; if inference is "
+        "unavailable, a keyword fallback is used and marked per record in the Processed Feedback sheet.", styles["SmallCell"],
     ))
     if result.get("warnings"):
         story += [Paragraph("Processing warnings", styles["Heading2"])]

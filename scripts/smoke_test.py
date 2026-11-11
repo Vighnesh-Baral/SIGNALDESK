@@ -64,7 +64,7 @@ def main() -> None:
         print(f"Emerging/newly observed themes: {', '.join(emerging) if emerging else 'None met the configured threshold'}")
     else:
         print(f"Trend limitation: {trend.get('reason', 'Not generated')}")
-    print(f"Qwen3-classified records: {result['ai_breakdown']['qwen3_records']}")
+    print(f"Local Qwen3-classified records: {result['ai_breakdown']['qwen3_records']}")
     print(f"Keyword-fallback records: {result['ai_breakdown']['fallback_records']}")
     print(f"Fallback agreement with synthetic labels: {accuracy:.1%} ({correct}/{len(result['classified_records'])})")
     print("Reports: Excel, PDF and chart generated successfully.")

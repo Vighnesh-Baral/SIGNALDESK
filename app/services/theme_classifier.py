@@ -7,8 +7,8 @@ from typing import Any
 
 import pandas as pd
 
-from app.core.config import OLLAMA_BATCH_SIZE
-from app.services.llm_service import OllamaError, generate_json
+from app.core.config import OLLAMA_BATCH_SIZE, OLLAMA_MODEL
+from app.services.llm_service import OllamaError, classification_method, active_provider, generate_json
 
 THEMES = [
     "Crashes & Stability",
@@ -138,11 +138,13 @@ def _split_records(records: list[dict[str, str]]) -> tuple[list[dict[str, str]],
 
 
 def classify_records(df: pd.DataFrame, *, batch_size: int | None = None) -> tuple[pd.DataFrame, list[str]]:
-    """Add theme and sentiment columns, retrying GPU OOM batches at smaller sizes.
+    """Classify feedback in bounded batches while preserving successful records.
 
-    Only memory-allocation failures trigger automatic batch splitting. Connection,
-    timeout and other errors fall back immediately instead of repeatedly retrying
-    a problem that a smaller prompt is unlikely to solve.
+    Hosted-provider 429 retries and request pacing are handled centrally by
+    ``llm_service``. Only local GPU memory failures trigger batch splitting:
+    splitting a rate-limited request would increase provider traffic and make
+    throttling worse. Missing/invalid IDs are retried independently, without
+    reclassifying records that the model already returned successfully.
     """
     if df.empty:
         raise ValueError("No feedback records are available to classify.")
@@ -152,6 +154,7 @@ def classify_records(df: pd.DataFrame, *, batch_size: int | None = None) -> tupl
     failed_records: dict[str, str] = {}
     warnings: list[str] = []
     stats = {"memory_retry_batches": 0, "incomplete_retry_batches": 0}
+    provider_label = (f"Ollama model {OLLAMA_MODEL}" if active_provider() == "ollama" else active_provider().title() + " LLM")
 
     records = [
         {"record_id": str(row.record_id), "feedback": str(row.original_feedback)}
@@ -189,7 +192,7 @@ def classify_records(df: pd.DataFrame, *, batch_size: int | None = None) -> tupl
                         "sentiment": sentiment,
                         "emotion": emotion,
                         "urgency": urgency,
-                        "classification_method": "qwen3",
+                        "classification_method": classification_method(response.get("_signaldesk_provider")),
                     }
 
             classifications.update(returned)
@@ -201,9 +204,12 @@ def classify_records(df: pd.DataFrame, *, batch_size: int | None = None) -> tupl
                     classify_batch(left)
                     classify_batch(right)
                 else:
-                    failed_records[missing[0]["record_id"]] = "Qwen3 omitted or returned an invalid classification."
+                    failed_records[missing[0]["record_id"]] = f"{provider_label} omitted or returned an invalid classification."
 
         except (OllamaError, ValueError, TypeError) as exc:
+            # A hosted 429 has already gone through bounded, header-aware retries
+            # in llm_service. Do not split it into more requests; use the explicit
+            # keyword fallback for this batch if the provider remains unavailable.
             if (
                 _is_gpu_memory_error(exc)
                 and not _is_context_initialization_error(exc)
@@ -220,19 +226,19 @@ def classify_records(df: pd.DataFrame, *, batch_size: int | None = None) -> tupl
                 else str(exc).strip()[:240]
             )
             for record in batch:
-                failed_records[record["record_id"]] = reason or "Qwen3 inference failed."
+                failed_records[record["record_id"]] = reason or f"{provider_label} inference failed."
 
     for start in range(0, len(records), size):
         classify_batch(records[start:start + size])
 
     if stats["memory_retry_batches"]:
         warnings.append(
-            f"Qwen3 encountered GPU memory pressure in {stats['memory_retry_batches']} batch(es) "
+            f"{provider_label} encountered GPU memory pressure in {stats['memory_retry_batches']} batch(es) "
             "and automatically retried them with smaller batches."
         )
     if stats["incomplete_retry_batches"]:
         warnings.append(
-            f"Qwen3 returned incomplete output in {stats['incomplete_retry_batches']} batch(es); "
+            f"{provider_label} returned incomplete output in {stats['incomplete_retry_batches']} batch(es); "
             "omitted records were retried in smaller batches."
         )
     if failed_records:
@@ -243,7 +249,7 @@ def classify_records(df: pd.DataFrame, *, batch_size: int | None = None) -> tupl
         else:
             detail = f"First failure: {reasons[0]}"
         warnings.append(
-            f"Qwen3 could not classify {len(failed_records)} record(s) after retries; "
+            f"{provider_label} could not classify {len(failed_records)} record(s) after retries; "
             f"keyword fallback was used for those records. {detail}"
         )
 

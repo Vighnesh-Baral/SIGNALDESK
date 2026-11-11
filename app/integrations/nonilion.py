@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from app.core.config import MAX_UPLOAD_MB, UPLOAD_DIR
+from app.storage.manager import safe_job_directory
 
 ALLOWED_EXTENSIONS = {".csv", ".xlsx", ".pdf", ".html", ".htm", ".txt", ".docx", ".json"}
 
@@ -50,8 +51,7 @@ def save_base64_attachment(attachment: dict[str, Any], job_id: str) -> Path:
         raise ValueError(f"Attachment exceeds the {MAX_UPLOAD_MB} MB upload limit.")
     if not content:
         raise ValueError("Attachment is empty.")
-    folder = UPLOAD_DIR / job_id
-    folder.mkdir(parents=True, exist_ok=True)
+    folder = safe_job_directory(UPLOAD_DIR, job_id)
     path = folder / filename
     path.write_bytes(content)
     return path

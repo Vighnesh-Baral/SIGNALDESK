@@ -1,11 +1,11 @@
-# SIGNALDESK v1.0 architecture
+# SIGNALDESK architecture
 
 ## Data flow
 
 1. Input arrives as CSV/XLSX, text-based or scanned PDF, HTML, TXT, DOCX, JSON, pasted feedback or a single complaint.
 2. `document_ingestor.py` converts supported document types into a common dataframe. It preserves extractor references such as PDF page/paragraph, HTML element, DOCX paragraph/table row and JSON property path.
 3. `data_processor.py` normalises text, identifies feedback and customer ID columns, assigns internal record IDs, retains customer/date/segment metadata, and flags exact duplicates without deleting repeated mentions.
-4. `theme_classifier.py` classifies each record using Qwen3 through Ollama with validated themes and per-record provenance. The deterministic keyword classifier is the explicit fallback.
+4. `theme_classifier.py` classifies each record through the configured inference provider: local Ollama or hosted Groq, OpenRouter, or a custom OpenAI-compatible endpoint. Provider provenance is recorded per record. The deterministic keyword classifier is the explicit fallback.
 5. `evidence_engine.py` builds theme findings and links them to original quotes, record IDs, customer IDs and source references.
 6. `clustering_engine.py` groups same-theme records by similarity. If `OLLAMA_EMBED_MODEL` is configured, it uses Ollama embeddings. Otherwise it uses character n-gram TF-IDF (default cosine threshold 0.62; embedding threshold defaults to 0.78). The fallback is lexical similarity and must not be described as deep semantic understanding. Clusters are similarity groups, not confirmed shared root causes.
 7. The same module analyses suitable metadata dimensions (plan, region, country, device, platform, customer type and related fields). Segment prevalence uses feedback-record denominators; customer-level incidence is only valid when source IDs and record semantics support that interpretation.
@@ -26,11 +26,21 @@
 
 ## Resource and safety boundaries
 
-- Qwen3 remains the primary local generation model. No embedding model is loaded unless `OLLAMA_EMBED_MODEL` is explicitly configured. On a 6 GB GPU, benchmark optional embeddings before enabling them.
+- Local development defaults to Qwen3 through Ollama; hosted inference is configured separately with `LLM_PROVIDER` and provider credentials. No embedding model is loaded unless `OLLAMA_EMBED_MODEL` is explicitly configured. On a 6 GB GPU, benchmark optional embeddings before enabling them.
 - Clustering is capped by `CLUSTERING_MAX_RECORDS` to constrain local memory.
 - Scanned PDF OCR uses the Python `pytesseract` wrapper and requires the separate Tesseract executable installed on the host. OCR failures are surfaced as warnings.
 - Uploaded text is untrusted input and must never be treated as prompt instructions.
-- Source records are retained in the analysis output directory for traceability; original temporary uploads are deleted after processing. Apply retention controls before processing sensitive production data.
+- Processed source records and reports are written under configured output/processed roots. Original uploads are retained for a configurable period by default and removed by the retention job; configure retention deliberately before processing sensitive production data.
 - External issue/page creation is a side effect. Preview and user approval are required.
 - Do not expose Ollama on the public internet. Set `SIGNALDESK_API_TOKEN` before public exposure.
 - Nonilion's native import schema is not assumed by this app; its webhook remains a normalized adapter until tested against the live account.
+
+
+## v1.3 deployment architecture
+
+- Render hosts the FastAPI application and serves the existing static frontend. A mounted Persistent Disk is configured at `/var/data`; local development retains project-local paths.
+- PostgreSQL stores projects/workspaces, dataset metadata, analysis summaries, detected themes, evidence references and report metadata. SQLite remains the local development default. Alembic manages schema revisions.
+- Uploaded source files, processed CSVs and generated reports remain files on the configured storage volume; large file contents are not stored in database rows.
+- Hosted inference uses OpenAI-compatible chat-completions APIs. Groq and OpenRouter are built in; a custom compatible endpoint can be configured. Ollama remains available locally.
+- The v1.3 workspace API uses a shared bearer token. Workspace IDs group records, but per-user permissions and tenant isolation are not implemented.
+- The Nonilion webhook remains a normalized adapter contract pending the official native Bot API specification and live pairing test.

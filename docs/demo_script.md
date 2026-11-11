@@ -3,7 +3,7 @@
 1. Open `/` and introduce SIGNALDESK through the scrolling product page. Explain: “SIGNALDESK turns scattered customer feedback into source-traceable product investigations.”
 2. Select **Open workspace** to enter `/app`. Show the modular light workspace and its sections: Overview, Analyse feedback, Investigations, Customers, Trends & comparison, Ask SIGNALDESK, and Reports & decisions.
 3. Upload the synthetic `customer_feedback_demo.csv` or use a short pasted-feedback example. Disclose that the dataset is synthetic.
-4. Show source record count, Qwen3/fallback split and frequent themes. Do not equate model usage with classification accuracy.
+4. Show source record count, configured AI-model/keyword-fallback split and frequent themes. Do not equate model usage with classification accuracy.
 5. Open a problem investigation card and distinguish customer-observed symptoms from unverified root-cause hypotheses.
 6. Show a similarity cluster and state the method shown by the app: optional Ollama embeddings if configured, otherwise character n-gram TF-IDF wording similarity. Do not call TF-IDF fallback deep semantic understanding.
 7. Show customer segmentation only if the dataset contains suitable metadata columns. Explain that rates use feedback-record denominators.

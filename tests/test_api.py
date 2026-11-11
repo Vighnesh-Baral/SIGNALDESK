@@ -1,4 +1,5 @@
 from fastapi.testclient import TestClient
+from uuid import uuid4
 
 from app.main import app
 
@@ -38,6 +39,8 @@ def test_application_workspace_is_available():
     assert "AI classification breakdown" in response.text
     assert "Evidence explorer" in response.text
     assert "Analyse customer feedback" in response.text
+    assert "Recent analysis history" in response.text
+    assert "workspaceSelect" in response.text
     assert "Liquid" not in response.text
 
 
@@ -115,6 +118,11 @@ def test_upload_analyze_and_download_artifacts_end_to_end(tmp_path, monkeypatch)
     job_response = client.get(f"/api/jobs/{job_id}")
     assert job_response.status_code == 200
     assert job_response.json()["dataset"]["total_valid_records"] == 4
+
+    history_response = client.get("/api/analyses?limit=10")
+    assert history_response.status_code == 200
+    history = history_response.json()["analyses"]
+    assert any(item["job_id"] == job_id and item["total_valid_records"] == 4 for item in history)
 
     for extension in ("xlsx", "pdf", "png"):
         artifact_response = client.get(f"/api/jobs/{job_id}/report.{extension}" if extension != "png" else f"/api/jobs/{job_id}/chart.png")
@@ -201,15 +209,17 @@ def test_ai_breakdown_counts_only_recognised_classification_methods():
         }),
     }
     breakdown = main_module._classification_breakdown(result)
-    assert breakdown == {
-        "qwen3_records": 2,
-        "fallback_records": 1,
-        "unreported_records": 1,
-        "total_records": 4,
-        "total_classified": 3,
-        "qwen3_percentage": 50.0,
-        "fallback_percentage": 25.0,
-    }
+    assert breakdown["qwen3_records"] == 2
+    assert breakdown["local_ollama_records"] == 2
+    assert breakdown["hosted_llm_records"] == 0
+    assert breakdown["llm_records"] == 2
+    assert breakdown["fallback_records"] == 1
+    assert breakdown["unreported_records"] == 1
+    assert breakdown["total_records"] == 4
+    assert breakdown["total_classified"] == 3
+    assert breakdown["qwen3_percentage"] == 50.0
+    assert breakdown["llm_percentage"] == 50.0
+    assert breakdown["fallback_percentage"] == 25.0
 
 
 def test_public_mode_fails_closed_without_api_token(monkeypatch):
@@ -324,7 +334,7 @@ def test_manual_submission_rejects_empty_text():
     assert response.status_code == 400
 
 
-def test_upload_source_file_is_removed_after_analysis(tmp_path, monkeypatch):
+def test_upload_source_file_is_retained_after_analysis_by_default(tmp_path, monkeypatch):
     import app.main as main_module
     from app.services import theme_classifier
     from app.services.llm_service import OllamaError
@@ -338,7 +348,9 @@ def test_upload_source_file_is_removed_after_analysis(tmp_path, monkeypatch):
         files={"file": ("feedback.csv", "Feedback\nThe dashboard is slow.\n", "text/csv")},
     )
     assert response.status_code == 200, response.text
-    assert not list(upload_dir.glob("**/*"))
+    retained = list(upload_dir.glob("**/feedback.csv"))
+    assert len(retained) == 1
+    assert retained[0].read_text(encoding="utf-8").startswith("Feedback")
 
 
 def test_dashboard_exposes_three_submission_modes_and_file_remove_control():
@@ -504,3 +516,92 @@ def test_external_integration_write_requires_explicit_confirmation(tmp_path, mon
     response = client.post(f"/api/jobs/{job_id}/integrations/github", json={"confirm": False})
     assert response.status_code == 400
     assert "confirm=true" in response.json()["detail"]
+
+
+def test_report_download_requires_bearer_token_in_public_mode(tmp_path, monkeypatch):
+    import app.main as main_module
+    job_id = "c" * 32
+    folder = tmp_path / job_id
+    folder.mkdir(parents=True)
+    report = folder / "signaldesk_research_brief.pdf"
+    report.write_bytes(b"%PDF-1.4 test")
+    monkeypatch.setattr(main_module, "OUTPUT_DIR", tmp_path)
+    monkeypatch.setattr(main_module, "SIGNALDESK_API_TOKEN", "download-secret")
+
+    denied = client.get(f"/api/jobs/{job_id}/report.pdf")
+    assert denied.status_code == 401
+    allowed = client.get(
+        f"/api/jobs/{job_id}/report.pdf",
+        headers={"Authorization": "Bearer download-secret"},
+    )
+    assert allowed.status_code == 200
+    assert allowed.content == b"%PDF-1.4 test"
+
+
+def test_analysis_history_requires_bearer_token(monkeypatch):
+    import app.main as main_module
+    monkeypatch.setattr(main_module, "SIGNALDESK_API_TOKEN", "history-secret")
+    assert client.get("/api/analyses").status_code == 401
+    response = client.get("/api/analyses", headers={"Authorization": "Bearer history-secret"})
+    assert response.status_code == 200
+
+
+def test_readiness_rejects_sqlite_when_postgresql_is_required(monkeypatch):
+    import app.main as main_module
+    monkeypatch.setattr(main_module, "DATABASE_REQUIRED", True)
+    monkeypatch.setattr(main_module, "DATABASE_URL", "sqlite:///./test.db")
+    response = client.get("/api/health/ready")
+    assert response.status_code == 503
+    assert "postgresql_database_url_required" in response.json()["detail"]["problems"]
+
+
+def test_application_lifespan_initializes_database_and_readiness():
+    with TestClient(app) as lifecycle_client:
+        response = lifecycle_client.get("/api/health/ready")
+        assert response.status_code == 200, response.text
+        assert response.json()["ready"] is True
+
+
+def test_projects_group_persistent_analysis_history(tmp_path, monkeypatch):
+    import app.main as main_module
+    from app.services import theme_classifier
+    from app.services.llm_service import OllamaError
+
+    monkeypatch.setattr(main_module, "OUTPUT_DIR", tmp_path / "outputs")
+    monkeypatch.setattr(main_module, "PROCESSED_DIR", tmp_path / "processed")
+    monkeypatch.setattr(theme_classifier, "generate_json", lambda _prompt: (_ for _ in ()).throw(OllamaError("offline")))
+
+    project_name = f"Product Research {uuid4().hex[:10]}"
+    created = client.post("/api/projects", json={"name": project_name, "description": "Feedback studies"})
+    assert created.status_code == 201, created.text
+    project_id = created.json()["project"]["project_id"]
+    assert len(project_id) == 32
+
+    analysis = client.post("/api/analyze/text", json={
+        "mode": "single", "feedback_text": "The dashboard is slow to load.", "project_id": project_id,
+    })
+    assert analysis.status_code == 200, analysis.text
+    history = client.get(f"/api/analyses?project_id={project_id}")
+    assert history.status_code == 200
+    assert history.json()["count"] == 1
+    assert history.json()["analyses"][0]["project_id"] == project_id
+
+    projects = client.get("/api/projects")
+    project = next(item for item in projects.json()["projects"] if item["project_id"] == project_id)
+    assert project["dataset_count"] == 1
+
+
+def test_invalid_project_id_is_rejected_before_analysis():
+    response = client.post("/api/analyze/text", json={
+        "mode": "single", "feedback_text": "The dashboard is slow.", "project_id": "not-a-valid-project-id",
+    })
+    assert response.status_code == 404
+    assert response.json()["detail"] == "Research workspace was not found."
+
+
+def test_duplicate_project_name_is_rejected():
+    project_name = f"Duplicate Workspace {uuid4().hex[:10]}"
+    first = client.post("/api/projects", json={"name": project_name})
+    assert first.status_code == 201
+    second = client.post("/api/projects", json={"name": project_name})
+    assert second.status_code == 409

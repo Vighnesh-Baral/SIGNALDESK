@@ -7,7 +7,8 @@ from typing import Any
 
 import pandas as pd
 
-from app.services.llm_service import OllamaError, generate_json
+from app.core.config import OLLAMA_MODEL
+from app.services.llm_service import OllamaError, active_provider, generate_json
 
 STOPWORDS = {
     "the", "and", "for", "with", "from", "that", "this", "what", "which", "when",
@@ -153,7 +154,8 @@ Retrieved source records:
         if not answer or not valid_ids or unsupported_inline_ids:
             raise OllamaError("The assistant response did not contain exclusively valid supporting record citations.")
         caveat = str(response.get("caveat", "")).strip()
-        method = "qwen3_grounded"
+        used_provider = str(response.get("_signaldesk_provider", active_provider()))
+        method = ("qwen3_grounded" if OLLAMA_MODEL.casefold().startswith("qwen3") else "ollama_grounded") if used_provider == "ollama" else f"{used_provider}_grounded"
     except (OllamaError, ValueError, TypeError, AttributeError, KeyError):
         valid_ids = [item["record_id"] for item in retrieved[:5]]
         matching_themes = sorted({item["theme"] for item in retrieved if item["theme"]})

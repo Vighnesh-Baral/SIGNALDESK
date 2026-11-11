@@ -35,7 +35,7 @@
     </nav>
     <div class="sidebar-spacer"></div>
     <div class="side-note"><strong>Evidence before assumptions.</strong><p>Every finding should lead back to the customer signal that supports it.</p></div>
-    <div class="sidebar-foot">SIGNALDESK v1.1 · LOCAL WORKSPACE</div>
+    <div class="sidebar-foot">SIGNALDESK v1.3 · CUSTOMER INTELLIGENCE</div>
   </aside>
   <div class="main-area">
     <header class="topbar">
@@ -65,7 +65,7 @@
               <div class="hero-copy"><div class="section-kicker">LATEST ANALYSIS</div><h2>Turn customer noise into a clearer signal.</h2><p id="overviewDatasetName">Your latest analysis will appear here.</p><div class="muted" id="overviewContext" style="font-size:11px"></div></div>
               <div class="hero-visual" aria-hidden="true"><svg viewBox="0 0 360 200" fill="none"><defs><linearGradient id="wave" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a8b7e3"/><stop offset="1" stop-color="#acd8d5"/></linearGradient></defs><path d="M14 139C48 139 52 60 87 60s37 94 72 94 40-112 76-112 38 77 72 77" stroke="url(#wave)" stroke-width="3" stroke-linecap="round"/><path d="M14 162C48 162 52 97 87 97s37 44 72 44 40-73 76-73 38 48 72 48" stroke="#c9c9e7" stroke-width="2" stroke-linecap="round" opacity=".72"/><g fill="#fff" stroke="#aab9df" stroke-width="2"><circle cx="87" cy="60" r="6"/><circle cx="159" cy="154" r="6"/><circle cx="235" cy="42" r="6"/><circle cx="307" cy="119" r="6"/></g><path d="M14 178H345" stroke="#dce2ef" stroke-dasharray="3 6"/></svg></div>
             </section>
-            <section class="glass mini-panel"><div><div class="section-kicker">CLASSIFICATION TRANSPARENCY</div><div class="big-number" id="overviewQwen">—</div><div class="mini-label">Records classified by Qwen3</div></div><div><div class="bar-track"><div class="bar-fill" id="overviewQwenBar"></div></div><div class="subtle" id="overviewQwenNote" style="margin-top:8px">Run an analysis to see model provenance.</div></div></section>
+            <section class="glass mini-panel"><div><div class="section-kicker">CLASSIFICATION TRANSPARENCY</div><div class="big-number" id="overviewQwen">—</div><div class="mini-label">Records classified by the AI model</div></div><div><div class="bar-track"><div class="bar-fill" id="overviewQwenBar"></div></div><div class="subtle" id="overviewQwenNote" style="margin-top:8px">Run an analysis to see model provenance.</div></div></section>
           </div>
           <div class="metrics" id="metrics"></div>
           <div class="dashboard-grid">
@@ -95,10 +95,11 @@
               <section class="input-panel hidden" id="panel-paste" role="tabpanel" aria-labelledby="tab-paste"><label for="pastedFeedback">Paste customer feedback</label><textarea id="pastedFeedback" placeholder="The dashboard takes too long to load.&#10;&#10;Exporting large reports causes the application to crash.&#10;&#10;My data is not synchronising between devices."></textarea><div class="helper">Separate comments with a blank line or a line containing --- . One newline remains part of the same comment.</div><label for="pasteCustomerId">Customer ID (optional)</label><input id="pasteCustomerId" type="text" maxlength="160" placeholder="Apply to all pasted comments" /></section>
               <section class="input-panel hidden" id="panel-single" role="tabpanel" aria-labelledby="tab-single"><label for="singleFeedback">Customer complaint</label><textarea id="singleFeedback" placeholder="Describe the customer's problem in their own words..."></textarea><div class="helper">The entire entry is treated as one feedback record, including multiple paragraphs.</div><label for="singleCustomerId">Customer ID (optional)</label><input id="singleCustomerId" type="text" maxlength="160" placeholder="e.g. CUST-001" /></section>
               <label for="apiToken" class="muted" style="font-size:11px">API token (only required when configured by the administrator)</label><input id="apiToken" type="password" autocomplete="off" placeholder="Leave blank for local-only mode" />
+              <div class="grid" style="margin-top:12px"><div><label for="workspaceSelect">Research workspace</label><select id="workspaceSelect"><option value="00000000000000000000000000000000">Default Workspace</option></select><div id="workspaceStatus" class="helper">Workspaces load when the API is available.</div></div><div><label for="newWorkspaceName">Create a workspace</label><div class="file-row"><input id="newWorkspaceName" type="text" maxlength="120" placeholder="e.g. Mobile App Research" /><button id="createWorkspaceButton" class="btn btn-light" type="button">Create</button></div></div></div>
               <div class="form-actions"><button id="submitButton" class="btn btn-primary" type="submit">Analyse file <span>→</span></button><button id="clearFormButton" class="btn btn-light" type="button">Clear inputs</button></div><div id="status" class="status" role="status" aria-live="polite"></div>
             </form>
           </section>
-          <aside class="panel"><div class="section-kicker">HOW IT WORKS</div><h3>One pipeline. Every source.</h3><p class="muted" style="font-size:12px">SIGNALDESK normalises submissions into traceable feedback records before classification and investigation.</p><div class="theme-list" style="margin-top:20px"><div class="theme-row"><span class="theme-name">01 · Extract & normalise</span><span class="theme-value">↘</span><div class="subtle">Preserve source context and record identity.</div></div><div class="theme-row"><span class="theme-name">02 · Understand & classify</span><span class="theme-value">↘</span><div class="subtle">Qwen3 with transparent fallback handling.</div></div><div class="theme-row"><span class="theme-name">03 · Investigate & decide</span><span class="theme-value">↘</span><div class="subtle">Link findings to supporting evidence.</div></div></div><div class="side-note" style="margin:20px 0 0"><strong>Evidence before assumptions.</strong><p>Model-generated hypotheses are labelled for review; counts are calculated from source records.</p></div></aside>
+          <aside class="panel"><div class="section-kicker">HOW IT WORKS</div><h3>One pipeline. Every source.</h3><p class="muted" style="font-size:12px">SIGNALDESK normalises submissions into traceable feedback records before classification and investigation.</p><div class="theme-list" style="margin-top:20px"><div class="theme-row"><span class="theme-name">01 · Extract & normalise</span><span class="theme-value">↘</span><div class="subtle">Preserve source context and record identity.</div></div><div class="theme-row"><span class="theme-name">02 · Understand & classify</span><span class="theme-value">↘</span><div class="subtle">The configured AI model with transparent fallback handling.</div></div><div class="theme-row"><span class="theme-name">03 · Investigate & decide</span><span class="theme-value">↘</span><div class="subtle">Link findings to supporting evidence.</div></div></div><div class="side-note" style="margin:20px 0 0"><strong>Evidence before assumptions.</strong><p>Model-generated hypotheses are labelled for review; counts are calculated from source records.</p></div></aside>
         </div>
       </section>
 
@@ -133,6 +134,7 @@
       <section id="reports" class="section-block">
         <div class="section-head"><div><div class="section-kicker">DECISION SUPPORT</div><h2 class="section-title">Reports & product decisions</h2><p>Export the research or turn validated findings into drafts for your product team.</p></div></div>
         <div class="panel"><div class="module-head"><h3>Download centre</h3><span class="subtle">Generated from the latest analysis</span></div><div id="downloads" class="links"><span class="muted">Run an analysis to generate reports.</span></div><div id="decisionDocuments" class="insight-grid" style="margin-top:16px"></div></div>
+        <div class="panel section-block"><div class="module-head"><div><h3>Recent analysis history</h3><span class="subtle">Saved metadata and reports from this workspace</span></div><button id="refreshHistory" class="btn btn-light" type="button">Refresh history</button></div><div id="historyStatus" class="status" role="status">Previous analyses appear here after database persistence is configured.</div><div id="historyItems" class="insight-grid"></div></div>
       </section>
       <p class="foot">SIGNALDESK · Customer intelligence, grounded in original evidence. Counts are measured from feedback records; hypotheses and recommendations require human review.</p>
     </main>
@@ -173,16 +175,16 @@ form.addEventListener('submit', async (event) => {
   if (activeMode === 'file') {
     const selectedFile = fileInput.files && fileInput.files[0];
     if (!selectedFile) { status.textContent = 'Choose a supported feedback file first, or select another submission method.'; return; }
-    const data = new FormData(); data.append('file', selectedFile); data.append('feedback_column', document.getElementById('feedbackColumn').value); data.append('source_id_column', document.getElementById('sourceColumn').value);
+    const data = new FormData(); data.append('file', selectedFile); data.append('feedback_column', document.getElementById('feedbackColumn').value); data.append('source_id_column', document.getElementById('sourceColumn').value); data.append('project_id', document.getElementById('workspaceSelect').value);
     endpoint = '/api/analyze'; requestOptions = {method:'POST', headers, body:data};
   } else {
     const feedbackText = document.getElementById(activeMode === 'paste' ? 'pastedFeedback' : 'singleFeedback').value;
     if (!feedbackText.trim()) { status.textContent = 'Enter customer feedback before starting the analysis.'; return; }
     const customerId = document.getElementById(activeMode === 'paste' ? 'pasteCustomerId' : 'singleCustomerId').value.trim();
-    endpoint = '/api/analyze/text'; requestOptions = {method:'POST', headers:{...headers,'Content-Type':'application/json'}, body:JSON.stringify({mode:activeMode, feedback_text:feedbackText, customer_id:customerId || null})};
+    endpoint = '/api/analyze/text'; requestOptions = {method:'POST', headers:{...headers,'Content-Type':'application/json'}, body:JSON.stringify({mode:activeMode, feedback_text:feedbackText, customer_id:customerId || null, project_id:document.getElementById('workspaceSelect').value})};
   }
   button.disabled = true; status.classList.remove('error'); status.textContent = activeMode === 'file' ? 'Extracting the source and analysing customer feedback…' : 'Preparing feedback records and analysing…';
-  try { const response = await fetch(endpoint, requestOptions); const payload = await response.json(); if (!response.ok) throw new Error(payload.detail || 'Analysis failed'); renderResults(payload); status.textContent = `Analysis complete · ${payload.job_id}`; toast('Analysis completed. Your research workspace is updated.'); if (activeMode === 'file') clearSelectedFile(); document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'}); }
+  try { const response = await fetch(endpoint, requestOptions); const payload = await response.json(); if (!response.ok) throw new Error(payload.detail || 'Analysis failed'); renderResults(payload); status.textContent = `Analysis complete · ${payload.job_id}`; toast('Analysis completed. Your research workspace is updated.'); if (activeMode === 'file') clearSelectedFile(); refreshAnalysisHistory(); document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'}); }
   catch (error) { status.classList.add('error'); status.textContent = `Error: ${error.message}`; }
   finally { button.disabled = false; }
 });
@@ -196,16 +198,16 @@ function renderResults(payload) {
   document.getElementById('overviewDatasetName').textContent = `${ds.filename || 'Customer feedback'} · analysis completed`;
   document.getElementById('overviewContext').textContent = `${Number(ds.total_valid_records)||0} records · ${Number(summary.themes_identified)||0} themes · ${Number(ds.exact_duplicate_mentions)||0} exact duplicate mentions retained`;
   document.getElementById('metrics').innerHTML = `<div class="metric"><strong>${Number(ds.total_valid_records)||0}</strong><span>Valid records</span><div class="metric-note">Feedback records processed</div></div><div class="metric"><strong>${Number(ds.exact_duplicate_mentions)||0}</strong><span>Duplicate mentions retained</span><div class="metric-note">Original evidence preserved</div></div><div class="metric"><strong>${Number(summary.themes_identified)||0}</strong><span>Themes identified</span><div class="metric-note">Controlled problem categories</div></div>`;
-  const ai = payload.ai_breakdown || {}; const qwen = Number(ai.qwen3_records)||0; const fallback = Number(ai.fallback_records)||0; const total = Number(ai.total_records ?? ds.total_valid_records)||0; const pct = Math.max(0,Math.min(100,Number(ai.qwen3_percentage)||0));
-  document.getElementById('aiMetrics').innerHTML = `<div class="ai-stat"><strong>${qwen}</strong><span class="muted">Classified by Qwen3</span></div><div class="ai-stat"><strong>${fallback}</strong><span class="muted">Keyword fallback</span></div><div class="ai-stat"><strong>${Number(ai.unreported_records)||0}</strong><span class="muted">Unreported method</span></div>`;
-  document.getElementById('aiSummary').textContent = `${total} records processed. Classification method is recorded per feedback record.`; document.getElementById('qwenBar').style.width = `${pct}%`; document.getElementById('qwenPercent').textContent = `Qwen3 classified ${pct}% of valid records.`;
+  const ai = payload.ai_breakdown || {}; const llm = Number(ai.llm_records ?? ai.qwen3_records)||0; const fallback = Number(ai.fallback_records)||0; const total = Number(ai.total_records ?? ds.total_valid_records)||0; const pct = Math.max(0,Math.min(100,Number(ai.llm_percentage ?? ai.qwen3_percentage)||0));
+  document.getElementById('aiMetrics').innerHTML = `<div class="ai-stat"><strong>${llm}</strong><span class="muted">Classified by AI model</span></div><div class="ai-stat"><strong>${fallback}</strong><span class="muted">Keyword fallback</span></div><div class="ai-stat"><strong>${Number(ai.unreported_records)||0}</strong><span class="muted">Unreported method</span></div>`;
+  document.getElementById('aiSummary').textContent = `${total} records processed. Classification method is recorded per feedback record.`; document.getElementById('qwenBar').style.width = `${pct}%`; document.getElementById('qwenPercent').textContent = `The configured AI model classified ${pct}% of valid records.`;
   const warnings = Array.isArray(payload.warnings)?payload.warnings:[]; const warningList=document.getElementById('warnings'); warningList.innerHTML=warnings.map(x=>`<li>${escapeHtml(x)}</li>`).join(''); warningList.hidden=!warnings.length;
-  document.getElementById('overviewQwen').textContent = `${pct}%`; document.getElementById('overviewQwenBar').style.width=`${pct}%`; document.getElementById('overviewQwenNote').textContent=`${qwen} of ${total} records classified by Qwen3`;
+  document.getElementById('overviewQwen').textContent = `${pct}%`; document.getElementById('overviewQwenBar').style.width=`${pct}%`; document.getElementById('overviewQwenNote').textContent=`${llm} of ${total} records classified by the configured AI model`;
   renderOverviewChart(payload.findings||[]); renderThemes(payload.findings||[]);
   const emotion=summary.emotion_breakdown||{}, urgency=summary.urgency_breakdown||{}; const emotionBox=document.getElementById('overviewEmotions'); emotionBox.innerHTML=Object.entries(emotion).filter(([k,v])=>k!=='unknown'&&Number(v)>0).map(([k,v])=>`<span class="chip"><i class="chip-dot"></i>${escapeHtml(k)} · ${Number(v)}</span>`).join('') || '<span class="muted">No emotion signals reported.</span>';
   renderTrends(payload.trend_analysis||{}); renderInvestigations(payload.findings||[]); renderEvidence(payload.findings||[]); renderClusters(payload.problem_clusters||{}); renderSegments(payload.segment_analysis||{}); renderDecisionDocuments(payload.decision_pack||{});
   document.getElementById('qaAnswer').classList.add('hidden'); document.getElementById('qaCitations').innerHTML=''; document.getElementById('qaStatus').textContent='';
-  document.getElementById('downloads').innerHTML=(payload.artifacts||[]).map(item=>{const href=safeArtifactHref(item.url);return href?`<a href="${escapeHtml(href)}">Download ${escapeHtml(String(item.type||'file').replaceAll('_',' ').toUpperCase())}</a>`:''}).join('');
+  document.getElementById('downloads').innerHTML=(payload.artifacts||[]).map(item=>{const href=safeArtifactHref(item.url);return href?`<a href="${escapeHtml(href)}" data-auth-download="1">Download ${escapeHtml(String(item.type||'file').replaceAll('_',' ').toUpperCase())}</a>`:''}).join('');
 }
 function renderOverviewChart(findings){const el=document.getElementById('overviewChart');const top=findings.slice(0,7);const max=Math.max(1,...top.map(x=>Number(x.mention_count)||0));el.innerHTML=top.map(x=>`<div class="chart-col"><div class="chart-bar" style="height:${Math.max(5,(Number(x.mention_count)||0)/max*100)}%" title="${escapeHtml(x.theme)}: ${Number(x.mention_count)||0}"></div><div class="chart-label">${escapeHtml(String(x.theme||'').split(' ')[0])}</div></div>`).join('')||'<span class="muted">Run an analysis to populate this chart.</span>'}
 function renderThemes(findings){const el=document.getElementById('overviewThemes');const top=findings.slice(0,6);const max=Math.max(1,...top.map(x=>Number(x.mention_count)||0));el.innerHTML=top.map(x=>`<div class="theme-row"><span class="theme-name">${escapeHtml(x.theme)}</span><span class="theme-value">${Number(x.mention_count)||0}</span><div class="theme-track"><span style="width:${Math.max(2,(Number(x.mention_count)||0)/max*100)}%"></span></div></div>`).join('')||'<span class="muted">Run an analysis to populate themes.</span>'}
@@ -216,13 +218,104 @@ function renderClusters(data){const el=document.getElementById('clusterContent')
 function renderSegments(data){const el=document.getElementById('segmentContent');if(!data.available){el.textContent=data.reason||'No suitable customer segmentation fields found.';return}el.innerHTML=(data.dimensions||[]).map(d=>`<div style="margin-bottom:16px"><h3>${escapeHtml(d.column)}</h3><div class="insight-grid">${(d.segments||[]).map(s=>`<div class="insight-card"><strong>${escapeHtml(s.segment)}</strong><p>${Number(s.feedback_records)} feedback records · ${Number(s.unique_customers)} unique customers</p>${(s.top_themes||[]).slice(0,3).map(t=>`<span class="tag">${escapeHtml(t.theme)} · ${Number(t.prevalence_pct)}%</span>`).join('')}</div>`).join('')}</div></div>`).join('')}
 function renderDecisionDocuments(data){const el=document.getElementById('decisionDocuments');el.innerHTML=(data.documents||[]).slice(0,6).map(d=>`<article class="insight-card"><h4>${escapeHtml(d.theme||d.title||'Product decision draft')}</h4><p>${escapeHtml(d.bug_report_markdown||d.summary||'Draft decision artifact')}</p><span class="tag">Draft · Human review required</span></article>`).join('')||'<p class="muted">Product decision drafts appear after a completed analysis.</p>'}
 
-document.getElementById('qaForm').addEventListener('submit',async event=>{event.preventDefault();if(!currentJobId){toast('Run an analysis before asking a question.');return}const question=document.getElementById('qaQuestion').value.trim();const status=document.getElementById('qaStatus');const button=document.getElementById('qaButton');button.disabled=true;status.textContent='Retrieving source evidence…';document.getElementById('qaAnswer').classList.add('hidden');document.getElementById('qaCitations').innerHTML='';const token=document.getElementById('apiToken').value.trim();const headers={'Content-Type':'application/json'};if(token)headers.Authorization=`Bearer ${token}`;try{const response=await fetch(`/api/jobs/${encodeURIComponent(currentJobId)}/ask`,{method:'POST',headers,body:JSON.stringify({question})});const payload=await response.json();if(!response.ok)throw new Error(payload.detail||'Could not answer the question');document.getElementById('qaAnswer').textContent=payload.answer||'No answer returned.';document.getElementById('qaAnswer').classList.remove('hidden');document.getElementById('qaCitations').innerHTML=(payload.cited_evidence||[]).map(e=>`<div class="qa-citation"><strong>${escapeHtml(e.record_id)} · ${escapeHtml(e.theme)}</strong><div>${escapeHtml(e.quote)}</div><div class="helper">Source row ${Number(e.source_row)||'—'}</div></div>`).join('');status.textContent=payload.answer_method==='qwen3_grounded'?'Answer grounded in retrieved source records.':'Evidence retrieval fallback.'}catch(error){status.textContent=`Error: ${error.message}`}finally{button.disabled=false}});
+document.getElementById('qaForm').addEventListener('submit',async event=>{event.preventDefault();if(!currentJobId){toast('Run an analysis before asking a question.');return}const question=document.getElementById('qaQuestion').value.trim();const status=document.getElementById('qaStatus');const button=document.getElementById('qaButton');button.disabled=true;status.textContent='Retrieving source evidence…';document.getElementById('qaAnswer').classList.add('hidden');document.getElementById('qaCitations').innerHTML='';const token=document.getElementById('apiToken').value.trim();const headers={'Content-Type':'application/json'};if(token)headers.Authorization=`Bearer ${token}`;try{const response=await fetch(`/api/jobs/${encodeURIComponent(currentJobId)}/ask`,{method:'POST',headers,body:JSON.stringify({question})});const payload=await response.json();if(!response.ok)throw new Error(payload.detail||'Could not answer the question');document.getElementById('qaAnswer').textContent=payload.answer||'No answer returned.';document.getElementById('qaAnswer').classList.remove('hidden');document.getElementById('qaCitations').innerHTML=(payload.cited_evidence||[]).map(e=>`<div class="qa-citation"><strong>${escapeHtml(e.record_id)} · ${escapeHtml(e.theme)}</strong><div>${escapeHtml(e.quote)}</div><div class="helper">Source row ${Number(e.source_row)||'—'}</div></div>`).join('');status.textContent=String(payload.answer_method||'').endsWith('_grounded')?'Answer grounded in retrieved source records.':'Evidence retrieval fallback.'}catch(error){status.textContent=`Error: ${error.message}`}finally{button.disabled=false}});
 
 document.getElementById('compareButton').addEventListener('click',async()=>{const baseline=document.getElementById('baselineJobId').value.trim();const status=document.getElementById('compareStatus');const output=document.getElementById('compareContent');if(!currentJobId){status.textContent='Run an analysis first.';return}if(!/^[a-f0-9]{32}$/i.test(baseline)){status.textContent='Enter a valid 32-character baseline job ID.';return}const token=document.getElementById('apiToken').value.trim();const headers={'Content-Type':'application/json'};if(token)headers.Authorization=`Bearer ${token}`;status.textContent='Comparing datasets…';try{const response=await fetch('/api/jobs/compare',{method:'POST',headers,body:JSON.stringify({baseline_job_id:baseline,current_job_id:currentJobId})});const data=await response.json();if(!response.ok)throw new Error(data.detail||'Comparison failed');output.innerHTML=`<p class="muted" style="font-size:11px">${escapeHtml(data.baseline.name)} (${Number(data.baseline.records)} records) → ${escapeHtml(data.current.name)} (${Number(data.current.records)} records)</p><div class="data-table-wrap"><table><thead><tr><th>Theme</th><th>Baseline share</th><th>Current share</th><th>Change</th><th>Signal</th></tr></thead><tbody>${(data.theme_comparisons||[]).map(x=>`<tr><td>${escapeHtml(x.theme)}</td><td>${Number(x.baseline_prevalence_pct)}%</td><td>${Number(x.current_prevalence_pct)}%</td><td>${Number(x.prevalence_change_percentage_points)>0?'+':''}${Number(x.prevalence_change_percentage_points)} pp</td><td>${escapeHtml(x.status)}</td></tr>`).join('')}</tbody></table></div><p class="helper">${escapeHtml(data.interpretation||'')}</p>`;status.textContent='Comparison complete.'}catch(error){status.textContent=`Error: ${error.message}`}});
 
 function toast(message){const el=document.getElementById('toast');el.textContent=message;el.classList.add('show');window.clearTimeout(toast._timer);toast._timer=window.setTimeout(()=>el.classList.remove('show'),3000)}
 function escapeHtml(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function safeArtifactHref(value){try{const u=new URL(String(value),window.location.origin);return ['http:','https:'].includes(u.protocol)?u.href:''}catch(_){return ''}}
+document.getElementById('downloads').addEventListener('click',async event=>{const link=event.target.closest('a[data-auth-download]');if(!link)return;event.preventDefault();const token=document.getElementById('apiToken').value.trim();const status=document.getElementById('status');try{const headers=token?{'Authorization':`Bearer ${token}`}:{ };const response=await fetch(link.href,{headers});if(!response.ok){const body=await response.json().catch(()=>({}));throw new Error(body.detail||'Download failed. Check your API token.')}const blob=await response.blob();const objectUrl=URL.createObjectURL(blob);const download=document.createElement('a');download.href=objectUrl;download.download=link.textContent.replace(/^Download\s+/i,'').toLowerCase().replaceAll(' ','_');document.body.appendChild(download);download.click();download.remove();URL.revokeObjectURL(objectUrl)}catch(error){status.classList.add('error');status.textContent=error.message}});
+
+async function loadWorkspaces() {
+  const status = document.getElementById('workspaceStatus');
+  const select = document.getElementById('workspaceSelect');
+  const token = document.getElementById('apiToken').value.trim();
+  const headers = token ? {'Authorization': `Bearer ${token}`} : {};
+  try {
+    const response = await fetch('/api/projects', {headers});
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.detail || 'Could not load workspaces.');
+    const previous = select.value;
+    const projects = payload.projects || [];
+    select.innerHTML = projects.map(project => `<option value="${escapeHtml(project.project_id)}">${escapeHtml(project.name)} · ${Number(project.dataset_count)||0} datasets</option>`).join('');
+    if (projects.some(project => project.project_id === previous)) select.value = previous;
+    status.textContent = `${projects.length} workspace(s) available.`;
+    refreshAnalysisHistory();
+  } catch (error) {
+    status.textContent = responseAuthHint(error.message);
+  }
+}
+function responseAuthHint(message) {
+  return /token|unauthori[sz]ed|401|503/i.test(String(message)) ? 'Enter the API token above to load protected workspaces.' : String(message);
+}
+async function createWorkspace() {
+  const input = document.getElementById('newWorkspaceName');
+  const status = document.getElementById('workspaceStatus');
+  const name = input.value.trim();
+  if (!name) { status.textContent = 'Enter a workspace name first.'; return; }
+  const token = document.getElementById('apiToken').value.trim();
+  const headers = {'Content-Type':'application/json'};
+  if (token) headers.Authorization = `Bearer ${token}`;
+  try {
+    const response = await fetch('/api/projects', {method:'POST', headers, body:JSON.stringify({name})});
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.detail || 'Could not create workspace.');
+    input.value = '';
+    await loadWorkspaces();
+    document.getElementById('workspaceSelect').value = payload.project.project_id;
+    status.textContent = `Workspace created: ${payload.project.name}`;
+    refreshAnalysisHistory();
+  } catch (error) {
+    status.textContent = responseAuthHint(error.message);
+  }
+}
+async function refreshAnalysisHistory() {
+  const status = document.getElementById('historyStatus');
+  const container = document.getElementById('historyItems');
+  const projectId = document.getElementById('workspaceSelect').value;
+  const token = document.getElementById('apiToken').value.trim();
+  const headers = token ? {'Authorization': `Bearer ${token}`} : {};
+  status.textContent = 'Loading saved analyses…';
+  try {
+    const query = new URLSearchParams({limit:'20'});
+    if (projectId) query.set('project_id', projectId);
+    const response = await fetch(`/api/analyses?${query.toString()}`, {headers});
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.detail || 'Could not load analysis history.');
+    const items = payload.analyses || [];
+    container.innerHTML = items.map(item => `<article class="insight-card"><div class="module-head"><strong>${escapeHtml(item.filename || 'Customer feedback')}</strong><span class="tag">${escapeHtml(item.status || 'saved')}</span></div><p>${Number(item.total_valid_records)||0} records · ${Number(item.themes_identified)||0} themes · ${escapeHtml(item.created_at ? new Date(item.created_at).toLocaleString() : 'Date unavailable')}</p><div class="subtle">Job ${escapeHtml(item.job_id)}</div><button class="btn btn-light" type="button" data-open-analysis="${escapeHtml(item.job_id)}" style="margin-top:10px">Open analysis</button></article>`).join('') || '<p class="muted">No saved analyses in this workspace yet.</p>';
+    status.textContent = `${items.length} saved analysis record(s).`;
+  } catch (error) {
+    container.innerHTML = '';
+    status.textContent = responseAuthHint(error.message);
+  }
+}
+async function openSavedAnalysis(jobId) {
+  const status = document.getElementById('historyStatus');
+  const token = document.getElementById('apiToken').value.trim();
+  const headers = token ? {'Authorization': `Bearer ${token}`} : {};
+  try {
+    const response = await fetch(`/api/jobs/${encodeURIComponent(jobId)}`, {headers});
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.detail || 'Could not restore saved analysis.');
+    renderResults(payload);
+    document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+    status.textContent = `Restored analysis ${jobId}.`;
+    toast('Saved analysis restored.');
+  } catch (error) {
+    status.textContent = responseAuthHint(error.message);
+  }
+}
+document.getElementById('apiToken').addEventListener('blur', () => loadWorkspaces());
+document.getElementById('createWorkspaceButton').addEventListener('click', createWorkspace);
+document.getElementById('refreshHistory').addEventListener('click', refreshAnalysisHistory);
+document.getElementById('workspaceSelect').addEventListener('change', refreshAnalysisHistory);
+document.getElementById('historyItems').addEventListener('click', event => {
+  const button = event.target.closest('button[data-open-analysis]');
+  if (button) openSavedAnalysis(button.dataset.openAnalysis);
+});
+loadWorkspaces();
 
 const sectionTitles={overview:['Overview','A clear view of the problems customers are reporting and the evidence behind them.'],analyse:['Analyse feedback','Bring in customer signals from documents, spreadsheets or direct text.'],investigations:['Investigations','Understand the problems customers report and the checks needed to validate them.'],customers:['Customers','Explore customer groups and the patterns present in their feedback.'],trends:['Trends & comparison','See how feedback patterns change across time windows and datasets.'],ask:['Ask SIGNALDESK','Investigate your analysis with evidence-grounded questions.'],reports:['Reports & decisions','Review and export research and product decision drafts.']};
 function goToSection(id){const target=document.getElementById(id);if(!target)return;document.querySelectorAll('.nav-link').forEach(n=>n.classList.toggle('active',n.dataset.target===id));document.getElementById('crumbCurrent').textContent=sectionTitles[id]?.[0]||'Overview';document.getElementById('workspaceTitle').textContent=sectionTitles[id]?.[0]||'Overview';document.getElementById('workspaceSubtitle').textContent=sectionTitles[id]?.[1]||'';target.scrollIntoView({behavior:'smooth',block:'start'})}

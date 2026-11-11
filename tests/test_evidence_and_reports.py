@@ -61,7 +61,7 @@ def test_report_generation_creates_excel_pdf_and_chart(tmp_path):
     from openpyxl import load_workbook
     workbook = load_workbook(tmp_path / "signaldesk_research_report.xlsx", read_only=True)
     overview = list(workbook["Overview"].values)
-    assert ("Classified by Qwen3", 1) in overview
+    assert ("Classified by AI model", 1) in overview
     assert ("Classified by keyword fallback", 2) in overview
     processed_headers = list(workbook["Processed Feedback"].values)[0]
     assert "source_type" in processed_headers

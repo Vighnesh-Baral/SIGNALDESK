@@ -1,0 +1,56 @@
+services:
+  - type: web
+    name: signaldesk
+    runtime: python
+    region: singapore
+    plan: 1c-2g
+    buildCommand: pip install -r requirements.txt
+    preDeployCommand: alembic upgrade head
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health/ready
+    autoDeployTrigger: commit
+    disk:
+      name: signaldesk-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: SIGNALDESK_STORAGE_ROOT
+        value: /var/data
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_REQUIRED
+        value: "true"
+      - key: SIGNALDESK_API_TOKEN
+        generateValue: true
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: ALLOW_UNAUTHENTICATED_LOCAL
+        value: "false"
+      - key: RETAIN_SOURCE_UPLOADS
+        value: "true"
+      - key: SOURCE_UPLOAD_RETENTION_DAYS
+        value: "30"
+      - key: ARTIFACT_RETENTION_DAYS
+        value: "90"
+      - key: TEMP_RETENTION_HOURS
+        value: "24"
+      - key: MAX_UPLOAD_MB
+        value: "20"
+      - key: LLM_PROVIDER
+        value: groq
+      - key: LLM_API_KEY
+        sync: false
+      - key: LLM_MODEL
+        sync: false
+      - key: LLM_FALLBACK_PROVIDER
+        value: openrouter
+      - key: LLM_FALLBACK_API_KEY
+        sync: false
+      - key: LLM_FALLBACK_MODEL
+        sync: false
+      - key: LLM_TIMEOUT_SECONDS
+        value: "120"
+      - key: LLM_MAX_TOKENS
+        value: "2048"
+      - key: PDF_OCR_ENABLED
+        value: "false"

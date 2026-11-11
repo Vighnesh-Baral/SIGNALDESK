@@ -26,6 +26,8 @@ def test_keyword_fallback_groups_common_feedback(monkeypatch):
 
 
 def test_qwen3_classification_is_tagged_per_record(monkeypatch):
+    from app.services import llm_service
+    monkeypatch.setattr(llm_service, "LLM_PROVIDER", "ollama")
     import pandas as pd
     from app.services import theme_classifier
 
@@ -50,6 +52,8 @@ def test_qwen3_classification_is_tagged_per_record(monkeypatch):
 
 
 def test_omitted_qwen3_records_use_explicit_fallback(monkeypatch):
+    from app.services import llm_service
+    monkeypatch.setattr(llm_service, "LLM_PROVIDER", "ollama")
     import pandas as pd
     from app.services import theme_classifier
 
@@ -69,6 +73,8 @@ def test_omitted_qwen3_records_use_explicit_fallback(monkeypatch):
 
 
 def test_gpu_memory_error_splits_batches_and_retries_smaller_chunks(monkeypatch):
+    from app.services import llm_service
+    monkeypatch.setattr(llm_service, "LLM_PROVIDER", "ollama")
     import json
     import pandas as pd
     from app.services import theme_classifier
